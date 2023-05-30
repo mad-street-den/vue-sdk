@@ -7,9 +7,14 @@
 
 import Foundation
 class SDKLogger{
-    static var isLoggingEnabled = true
     
-    static func logSDKInfo(_ tag: String,_ message: String) {
+    static let shared = SDKLogger()
+   
+    var isLoggingEnabled:Bool = true
+    private init() {
+         // Private initializer to prevent direct instantiation
+     }
+    func logSDKInfo(_ tag: String,_ message: String) {
         if isLoggingEnabled {
             print(tag,message)
         }

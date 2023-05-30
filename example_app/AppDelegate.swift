@@ -14,15 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        var msdObject: MSD?
-        do{
-            msdObject = try MSD.getInstance(token: "token")
-        }
-        catch let error{
-            print(error)
-        }
-        msdObject?.track(eventName: "didFinishLaunchingWithOptions", properties: [:])
         return true
     }
     

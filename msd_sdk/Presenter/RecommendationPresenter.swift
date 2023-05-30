@@ -11,7 +11,7 @@ class RecommendationPresenter {
     
     init() {}
     
-    func getRecommendation(eventName: String, properties: [String: Any?]) {
+    func getRecommendation(properties: [String: Any?] ) {
         
         // Call API and FLOW
     }

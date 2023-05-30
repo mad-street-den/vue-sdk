@@ -9,17 +9,21 @@
 import Foundation
 
 protocol HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError>
+    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, completion: @escaping (Result<T, RequestError>) -> Void)
 }
 
-extension HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async -> Result<T, RequestError> {
+class ApiClient: HTTPClient {
+    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, completion: @escaping (Result<T, RequestError>) -> Void) {
         guard Reachability.isConnectedToNetwork() else {
-            return .failure(.noInternet)
+            completion(.failure(.noInternet))
+            return
         }
         
         let strURL = endpoint.scheme + endpoint.host + endpoint.path
-        guard let url = URL(string: strURL) else { return .failure(.invalidURL) }
+        guard let url = URL(string: strURL) else {
+            completion(.failure(.noInternet))
+            return
+        }
         
         var request = URLRequest(url: url)
         request.timeoutInterval = 60
@@ -29,36 +33,48 @@ extension HTTPClient {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let body = endpoint.body {
-            let jsondata = try? JSONSerialization.data(withJSONObject: body, options: [])
-            request.httpBody = jsondata
+            do {
+                let jsondata = try JSONSerialization.data(withJSONObject: body, options: [])
+                request.httpBody = jsondata
+            } catch {
+                completion(.failure(.invalidURL))
+                return
+            }
         }
         
-        
-        do {
-            var apiResponse: (data: Data, response: URLResponse)? = nil
-            if #available(iOS 15.0, *) {
-                apiResponse = try await URLSession.shared.data(for: request, delegate: nil)
-            } else {
-                apiResponse = try await URLSession.shared.data(for: request)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error)")
+                completion(.failure(.unknown))
+                return
             }
             
-            guard let response = apiResponse?.response as? HTTPURLResponse else { return .failure(.noResponse) }
-            let result = handleNetworkResponse(response)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(.noResponse))
+                return
+            }
+            let result = self.handleNetworkResponse(httpResponse)
             
             switch result {
             case .success(_):
-                guard let data = apiResponse?.data else { return .failure(.noData) }
+                guard let data = data else {
+                    completion(.failure(.noData))
+                    return
+                }
                 
-                
-                guard let decodedResponse = try? newJSONDecoder().decode(T.self, from: data) else { return .failure(.unableToDecode) }
-                return .success(decodedResponse)
+                guard let decodedResponse = try? newJSONDecoder().decode(T.self, from: data) else {
+                    completion(.failure(.unableToDecode))
+                    return
+                }
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Response: \(responseString)")
+                }
+                completion(.success(decodedResponse))
                 
             case .failure(let error):
-                return .failure(error)
+                completion(.failure(error))
             }
-        } catch {
-            return .failure(.unknown)
-        }
+        }.resume()
     }
     
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool, RequestError> {

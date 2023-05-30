@@ -11,7 +11,7 @@ protocol Endpoint {
   var path: String { get }
   var method: RequestMethod { get }
   var header: [String: String]? { get }
-  var body: [String: Any]? { get }
+  var body: [String: Any?]? { get }
 }
 
 extension Endpoint {
@@ -20,7 +20,7 @@ extension Endpoint {
   }
   
   var host: String {
-    return "host name"
+    return "13.234.201.82:6001/v1"
   }
   
 }

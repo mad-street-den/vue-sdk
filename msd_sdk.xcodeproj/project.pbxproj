@@ -24,13 +24,13 @@
 		F9E64DB82A1BA2F100620A99 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA52A1BA2F100620A99 /* Response.swift */; };
 		F9E64DB92A1BA2F100620A99 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA62A1BA2F100620A99 /* Request.swift */; };
 		F9E64DBA2A1BA2F100620A99 /* MSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA82A1BA2F100620A99 /* MSD.swift */; };
-		F9E64DBB2A1BA2F100620A99 /* DemoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAB2A1BA2F100620A99 /* DemoEndpoint.swift */; };
+		F9E64DBB2A1BA2F100620A99 /* MSDEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAB2A1BA2F100620A99 /* MSDEndpoint.swift */; };
 		F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAD2A1BA2F100620A99 /* Reachability.swift */; };
 		F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAF2A1BA2F100620A99 /* HTTPClient.swift */; };
 		F9E64DBE2A1BA2F100620A99 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB02A1BA2F100620A99 /* RequestMethod.swift */; };
 		F9E64DBF2A1BA2F100620A99 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB12A1BA2F100620A99 /* RequestError.swift */; };
 		F9E64DC02A1BA2F100620A99 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB22A1BA2F100620A99 /* Endpoint.swift */; };
-		F9E64DC12A1BA2F100620A99 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB42A1BA2F100620A99 /* DemoService.swift */; };
+		F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB42A1BA2F100620A99 /* MSDService.swift */; };
 		F9E64DC42A1BA31E00620A99 /* msd_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C11F382A1B944500830210 /* msd_sdk.framework */; };
 		F9E64DC52A1BA31E00620A99 /* msd_sdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26C11F382A1B944500830210 /* msd_sdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9E64DCB2A1BA6C700620A99 /* DataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */; };
@@ -42,6 +42,8 @@
 		F9E64DD82A1BAFA100620A99 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */; };
 		F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */; };
 		F9E64DDD2A1BB06400620A99 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DDC2A1BB06400620A99 /* UserDefaults+Ext.swift */; };
+		F9FE32B12A24C34A007E923D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE32B02A24C34A007E923D /* Utils.swift */; };
+		F9FE32B32A24CA4A007E923D /* MSDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE32B22A24CA4A007E923D /* MSDError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,13 +114,13 @@
 		F9E64DA52A1BA2F100620A99 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F9E64DA62A1BA2F100620A99 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F9E64DA82A1BA2F100620A99 /* MSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSD.swift; sourceTree = "<group>"; };
-		F9E64DAB2A1BA2F100620A99 /* DemoEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoEndpoint.swift; sourceTree = "<group>"; };
+		F9E64DAB2A1BA2F100620A99 /* MSDEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSDEndpoint.swift; sourceTree = "<group>"; };
 		F9E64DAD2A1BA2F100620A99 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F9E64DAF2A1BA2F100620A99 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F9E64DB02A1BA2F100620A99 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		F9E64DB12A1BA2F100620A99 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		F9E64DB22A1BA2F100620A99 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		F9E64DB42A1BA2F100620A99 /* DemoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoService.swift; sourceTree = "<group>"; };
+		F9E64DB42A1BA2F100620A99 /* MSDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSDService.swift; sourceTree = "<group>"; };
 		F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValidator.swift; sourceTree = "<group>"; };
 		F9E64DCC2A1BA6D200620A99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogger.swift; sourceTree = "<group>"; };
@@ -128,6 +130,8 @@
 		F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPresenter.swift; sourceTree = "<group>"; };
 		F9E64DDC2A1BB06400620A99 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
+		F9FE32B02A24C34A007E923D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F9FE32B22A24CA4A007E923D /* MSDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSDError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E64DA32A1BA2F100620A99 /* Model.swift */,
+				F9FE32B22A24CA4A007E923D /* MSDError.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -298,7 +303,7 @@
 		F9E64DAA2A1BA2F100620A99 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DAB2A1BA2F100620A99 /* DemoEndpoint.swift */,
+				F9E64DAB2A1BA2F100620A99 /* MSDEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -325,7 +330,7 @@
 		F9E64DB32A1BA2F100620A99 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DB42A1BA2F100620A99 /* DemoService.swift */,
+				F9E64DB42A1BA2F100620A99 /* MSDService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 		F9E64DC92A1BA6B600620A99 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F9FE32B02A24C34A007E923D /* Utils.swift */,
 				F9E64DDB2A1BB04A00620A99 /* Extensions */,
 				F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */,
 				F9E64DCC2A1BA6D200620A99 /* Constants.swift */,
@@ -579,11 +585,13 @@
 			files = (
 				F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */,
 				F9E64DD42A1BACDB00620A99 /* RecommendationCallback.swift in Sources */,
+				F9FE32B32A24CA4A007E923D /* MSDError.swift in Sources */,
 				F9E64DBA2A1BA2F100620A99 /* MSD.swift in Sources */,
 				F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */,
-				F9E64DBB2A1BA2F100620A99 /* DemoEndpoint.swift in Sources */,
+				F9E64DBB2A1BA2F100620A99 /* MSDEndpoint.swift in Sources */,
 				26C11F3D2A1B944500830210 /* msd_sdk.docc in Sources */,
 				F9E64DCD2A1BA6D200620A99 /* Constants.swift in Sources */,
+				F9FE32B12A24C34A007E923D /* Utils.swift in Sources */,
 				F9E64DB92A1BA2F100620A99 /* Request.swift in Sources */,
 				F9E64DBF2A1BA2F100620A99 /* RequestError.swift in Sources */,
 				F9E64DD62A1BAF8000620A99 /* BasePresenter.swift in Sources */,
@@ -595,7 +603,7 @@
 				F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */,
 				F9E64DD12A1BA94900620A99 /* SDKException.swift in Sources */,
 				F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */,
-				F9E64DC12A1BA2F100620A99 /* DemoService.swift in Sources */,
+				F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */,
 				F9E64DB72A1BA2F100620A99 /* Model.swift in Sources */,
 				F9E64DDD2A1BB06400620A99 /* UserDefaults+Ext.swift in Sources */,
 			);
@@ -814,6 +822,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -842,6 +851,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
