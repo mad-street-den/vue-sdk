@@ -1,10 +1,3 @@
-//
-//  MSDError.swift
-//  msd_sdk
-//
-//  Created by Julien on 29/05/23.
-//
-
 import Foundation
 
 public struct MSDError: Codable {

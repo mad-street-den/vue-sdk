@@ -1,14 +1,6 @@
-//
-//  MSDEndpoint.swift
-//  ios_sdk
-//
-//  Created by Julien on 22/05/23.
-//
-
 enum MSDEndpoint {
     case track(body: [String: Any?])
     case search(body: [String: Any?])
-    
 }
 
 extension MSDEndpoint: Endpoint {
@@ -25,7 +17,6 @@ extension MSDEndpoint: Endpoint {
         switch self {
         case .track, .search:
             return .post
-            
         }
     }
     

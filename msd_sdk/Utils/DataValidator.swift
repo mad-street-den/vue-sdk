@@ -1,16 +1,7 @@
-//
-//  DataValidator.swift
-//  msd_sdk
-//
-//  Created by Julien on 22/05/23.
-//
-
 import Foundation
 
 class DataValidator {
-    
     static func validateClientData(_ token: String?,baseUrl:String?)->String?  {
-        //validate API token
         if Utils.checkNullOrEmptyString(token) {
             SDKLogger.shared.logSDKInfo(
                 INIT_SDK_TOKEN_EXCEPTION,
@@ -19,7 +10,6 @@ class DataValidator {
             return nil
         }
         
-        //validate baseURL
         if Utils.checkNullOrEmptyString(baseUrl) {
             SDKLogger.shared.logSDKInfo(
                 INIT_SDK_BASE_URL_EXCEPTION,
@@ -27,7 +17,6 @@ class DataValidator {
             )
             return nil
         }
-        
         return token
     }
     
@@ -43,7 +32,6 @@ class DataValidator {
     }
     
     static func validateEventSanity(event: String?, apiToken:String?, baseUrl:String?, properties:  [String: Any?]?) -> String?{
-        //validate API token
         if Utils.checkNullOrEmptyString(apiToken){
             SDKLogger.shared.logSDKInfo(
                 INIT_SDK_TOKEN_EXCEPTION,
@@ -52,7 +40,6 @@ class DataValidator {
             return nil
         }
         
-        //validate base URL
         if Utils.checkNullOrEmptyString(baseUrl){
             SDKLogger.shared.logSDKInfo(
                 INIT_SDK_BASE_URL_EXCEPTION,
@@ -88,7 +75,6 @@ class DataValidator {
     }
     
     static func validateRecommendationSanity(apiToken:String?, baseUrl:String?, properties: RecommendationRequest,completionHandler:  @escaping ([String:Any?]?, MSDError?) -> Void) {
-        //validate API token
         if Utils.checkNullOrEmptyString(apiToken){
             completionHandler(nil, MSDError(errors: [ApiError(code: "ERR001", message: "Get Recommendations called before setting API token")]))
             SDKLogger.shared.logSDKInfo(
@@ -97,7 +83,6 @@ class DataValidator {
             )
         }
         
-        //validate BaseURL
         if Utils.checkNullOrEmptyString(baseUrl){
             completionHandler(nil, MSDError(errors: [ApiError(code: "ERR007", message: "Get Recommendations method called before setting Base URL")]))
             SDKLogger.shared.logSDKInfo(
@@ -105,7 +90,5 @@ class DataValidator {
                 "Get Recommendations method called before setting Base URL"
             )
         }
-        
-        //TODO: Add Recommendation Sanity Checks
     }
 }

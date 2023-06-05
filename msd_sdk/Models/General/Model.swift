@@ -1,8 +1,3 @@
-// Model.swift
-// ios_sdk
-//
-// Created by Julien on 22/05/23.
-//
 import Foundation
 
 enum RecommendationRequestType:String{
@@ -18,13 +13,12 @@ public class RecommendationRequest{
     var catalogs: [String: Any?]
     var dynamicdata:[String:String?] = [:]
     
-   public init(platform: String, medium: String, integrationMode: String, catalogs: [String : Any?]) {
+    public init(platform: String, medium: String, integrationMode: String, catalogs: [String : Any?]) {
         self.platform = platform
         self.medium = medium
         self.integrationMode = integrationMode
         self.catalogs = catalogs
     }
-
 }
 
 extension RecommendationRequest {
@@ -35,15 +29,12 @@ extension RecommendationRequest {
             "integrationMode": integrationMode
         ]
         
-        // Convert catalogs dictionary to a new dictionary with non-nil values
         var catalogsDictionary: [String: Any] = [:]
         for (key, value) in catalogs {
             if let unwrappedValue = value {
                 catalogsDictionary[key] = unwrappedValue
             }
         }
-        
-        // Include the catalogs dictionary in the overall dictionary representation
         dictionary["catalogs"] = catalogsDictionary
         
         do {
@@ -58,5 +49,4 @@ extension RecommendationRequest {
     func setDynamicDataField(dynamicKey:String, dynamicValue:String?){
         self.dynamicdata = [dynamicKey:dynamicValue]
     }
-    
 }

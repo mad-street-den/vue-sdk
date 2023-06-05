@@ -1,12 +1,4 @@
-//
-//  Constants.swift
-//  msd_sdk
-//
-//  Created by Julien on 22/05/23.
-//
-
 import Foundation
-
 
 let  INIT_SDK_TOKEN_EXCEPTION = "The token was not specified"
 let INIT_SDK_BASE_URL_EXCEPTION = "The Base URL is not specified"

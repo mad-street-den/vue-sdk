@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  example_app
-//
-//  Created by JIju S Jacob on 22/05/23.
-//
-
 import UIKit
 import msd_sdk
 
@@ -22,8 +15,6 @@ class ViewController: UIViewController {
         
         //Track Method
         msdObject.track(eventName: "YOUR_CUSTOM_EVENT_NAME", properties: ["YOUR_KEY":"YOUR_VALUE"])
-
-        
         
         //getRecommendationsByPage Method
         msdObject.getRecommendationsByPage(pageReference: "YOUR_PAGE_NAME", properties: RecommendationRequest(platform: "YOUR_PLATFORM", medium: "YOUR_MEDIUM_STRING", integrationMode: "SPECIFIED_INTEGRATION_MODE", catalogs: [:])) { response, error in
@@ -61,7 +52,5 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
