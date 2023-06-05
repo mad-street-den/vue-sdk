@@ -8,11 +8,7 @@ class EventPresenter: BasePresenter {
     }
     
     func trackEvent(eventName: String, properties: [String: Any?]) async {
-        await msdservice.track(event: eventName, properties: properties, success: { res in
-            print(res)
-        }, failure: { error in
-            print(error)
-        })
+        //TODO: CALL TRACK SERVICE HERE
     }
 }
 

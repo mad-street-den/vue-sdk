@@ -1,81 +1,92 @@
 import Foundation
 
 protocol HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, completion: @escaping (Result<T, RequestError>) -> Void)
+    func sendRequest(endpoint: APIRequestProtocol,success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void)
 }
 
 class ApiClient: HTTPClient {
-    func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type, completion: @escaping (Result<T, RequestError>) -> Void) {
+    func sendRequest(endpoint: APIRequestProtocol, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         guard Reachability.isConnectedToNetwork() else {
-            completion(.failure(.noInternet))
+            //handle error
             return
         }
         
-        let strURL = endpoint.scheme + endpoint.host + endpoint.path
+        guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !msdBaseUrl.isEmpty else {
+            //handle error
+
+            return
+        }
+        
+        let strURL = msdBaseUrl + endpoint.path
         guard let url = URL(string: strURL) else {
-            completion(.failure(.noInternet))
+            //handle error
+
             return
         }
         
         var request = URLRequest(url: url)
-        request.timeoutInterval = 60
+        request.timeoutInterval = 10
         request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = endpoint.header
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(AppManager.shared.apiToken ?? "", forHTTPHeaderField: "x-api-key")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         if let body = endpoint.body {
-            do {
-                let jsondata = try JSONSerialization.data(withJSONObject: body, options: [])
-                request.httpBody = jsondata
-            } catch {
-                completion(.failure(.invalidURL))
-                return
-            }
+            let jsondata = try? JSONSerialization.data(withJSONObject: body, options: [])
+            request.httpBody = jsondata
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error: \(error)")
-                completion(.failure(.unknown))
+            if error != nil {
+                //handle error
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.noResponse))
+                //handle error
                 return
             }
-            let result = self.handleNetworkResponse(httpResponse)
             
-            switch result {
-            case .success(_):
-                guard let data = data else {
-                    completion(.failure(.noData))
-                    return
+            do {
+                if self.checkStatusCode(httpResponse) {
+                    self.handleSuccessResponse(data: data, success: success, failure: failure)
+                } else {
+                    try self.handleFailureResponse(data: data, success: success, failure: failure)
                 }
-                
-                guard let decodedResponse = try? newJSONDecoder().decode(T.self, from: data) else {
-                    completion(.failure(.unableToDecode))
-                    return
-                }
-                if let responseString = String(data: data, encoding: .utf8) {
-                    print("Response: \(responseString)")
-                }
-                completion(.success(decodedResponse))
-                
-            case .failure(let error):
-                completion(.failure(error))
+            } catch {
+                //handle error
+                return
             }
+            
         }.resume()
     }
     
-    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<Bool, RequestError> {
-        switch response.statusCode {
-        case 200...299: return .success(true)
-        case 401...500: return .failure(.unauthorized)
-        case 501...599: return .failure(.badRequest)
-        case 600: return .failure(.outdated)
-        default: return .failure(.unexpectedStatusCode)
+    private func checkStatusCode(_ response: HTTPURLResponse) -> Bool {
+        return response.statusCode == 200
+    }
+    
+    private func handleSuccessResponse(data: Data?, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+        guard let data = data else {
+            //handle error
+            return
         }
+        
+        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] {
+            success(json)
+            return
+        }
+        //handle error
+    }
+    
+    private func handleFailureResponse(data: Data?, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) throws {
+        guard let data = data else {
+            //handle error
+            return
+        }
+        
+        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any?] {
+            //handle error
+            return
+        }
+        //handle error
     }
 }

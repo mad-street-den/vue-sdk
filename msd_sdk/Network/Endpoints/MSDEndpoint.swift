@@ -3,7 +3,7 @@ enum MSDEndpoint {
     case search(body: [String: Any?])
 }
 
-extension MSDEndpoint: Endpoint {
+extension MSDEndpoint: APIRequestProtocol {
     var path: String {
         switch self {
         case .track:

@@ -1,10 +1,14 @@
 import Foundation
 
-class RecommendationPresenter {
-    init() {}
+class RecommendationPresenter: BasePresenter {
+    private let msdservice: MSDServiceable
     
-    func getRecommendation(properties: [String: Any?] ) {
-        // Call API and FLOW
+    init(msdservice: MSDServiceable) {
+        self.msdservice = msdservice
+    }
+    
+    func getRecommendations(searchType: [String: String],  properties: RecommendationRequest, success: @escaping([[String: Any?]]) -> Void, failure: @escaping([String: Any?]) -> Void) async {
+        //Call recommendations API here
     }
 }
 
