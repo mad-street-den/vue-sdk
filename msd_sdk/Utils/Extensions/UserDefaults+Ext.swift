@@ -2,6 +2,7 @@ import Foundation
 
 enum UserDefaultsKeys: String {
     case MAD_UUID = "mad_uuid"
+    case MSD_USER_ID = "msd_user_id"
 }
 
 extension UserDefaults {
@@ -14,7 +15,7 @@ extension UserDefaults {
         return UserDefaults.standard.string(forKey: key)
     }
     
-    func clearSpecificDataInUserDefault(key: String) {
+    func removeData(key: String) {
         UserDefaults.standard.removeObject(forKey: key)
         synchronize()
     }

@@ -1,9 +1,12 @@
 import Foundation
 
-let  INIT_SDK_TOKEN_EXCEPTION = "The token was not specified"
-let INIT_SDK_BASE_URL_EXCEPTION = "The Base URL is not specified"
-let INIT_USER_ID_EXCEPTION = "The User id is not specified"
+let userDefaults = UserDefaults.standard
+let osValue = "ios"
+let mobile = "mobile"
 
-let  LOG_INFO_TAG_EVENT_TRACKING = "MSD Event Tracker"
+let LOG_INFO_TAG_EVENT_TRACKING = "MSD Event Tracker"
 let LOG_INFO_TAG_RECOMMENDATION = "MSD Recommendation"
 let LOG_INFO_TAG_GENERIC = "MSD SDK"
+
+let TRACK_ENDPOINT = "/events/track"
+let SEARCH_RECOMMENDATION_ENDPOINT = "/search"

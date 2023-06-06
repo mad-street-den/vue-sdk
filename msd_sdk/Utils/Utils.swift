@@ -7,4 +7,12 @@ class Utils {
         }
         return false
     }
+    
+    static func checkEmptyString(_ value: String) -> Bool {
+        guard !value.isEmpty else {
+            return true
+        }
+        return false
+    }
 }
+

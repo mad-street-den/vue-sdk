@@ -1,38 +1,32 @@
 enum MSDEndpoint {
-    case track(body: [String: Any?])
-    case search(body: [String: Any?])
+    case track(body: [String:Any?])
+    case search(body: [String:Any?])
 }
 
 extension MSDEndpoint: APIRequestProtocol {
     var path: String {
         switch self {
         case .track:
-            return "/products"
+            return TRACK_ENDPOINT
         case .search:
-            return "/search"
+            return SEARCH_RECOMMENDATION_ENDPOINT
         }
     }
     
     var method: RequestMethod {
-        switch self {
-        case .track, .search:
-            return .post
-        }
+        return .post
     }
     
-    var header: [String: String]? {
-        switch self {
-        case .track, .search:
-            return ["Authorization": "token"]
-        }
+    var header: [String:String]? {
+        return [:]
     }
     
-    var body: [String: Any?]? {
+    var body: [String:Any?]? {
         switch self {
-        case .track(_):
-            return ["page": 1]
+        case .track(let body):
+            return body
         case .search(let body):
-            return ["values": body]
+            return body
         }
     }
 }
