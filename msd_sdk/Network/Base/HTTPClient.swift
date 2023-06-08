@@ -13,19 +13,17 @@ class ApiClient: HTTPClient {
         
         guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !msdBaseUrl.isEmpty else {
             //handle error
-
             return
         }
         
         let strURL = msdBaseUrl + endpoint.path
         guard let url = URL(string: strURL) else {
             //handle error
-
             return
         }
         
         var request = URLRequest(url: url)
-        request.timeoutInterval = 10
+        request.timeoutInterval = 60
         request.httpMethod = endpoint.method.rawValue
         request.setValue(AppManager.shared.apiToken ?? "", forHTTPHeaderField: "x-api-key")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -48,15 +46,14 @@ class ApiClient: HTTPClient {
             
             do {
                 if self.checkStatusCode(httpResponse) {
-                    self.handleSuccessResponse(data: data, success: success, failure: failure)
+                    try self.handleResponse(data: data, success: success, failure: failure)
                 } else {
-                    try self.handleFailureResponse(data: data, success: success, failure: failure)
+                    try self.handleResponse(data: data, success: failure, failure: failure)
                 }
             } catch {
                 //handle error
                 return
             }
-            
         }.resume()
     }
     
@@ -64,7 +61,7 @@ class ApiClient: HTTPClient {
         return response.statusCode == 200
     }
     
-    private func handleSuccessResponse(data: Data?, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    private func handleResponse(data: Data?, success: @escaping ([String: Any?]) -> Void, failure: @escaping ([String: Any?]) -> Void) throws {
         guard let data = data else {
             //handle error
             return
@@ -72,21 +69,8 @@ class ApiClient: HTTPClient {
         
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] {
             success(json)
-            return
-        }
-        //handle error
-    }
-    
-    private func handleFailureResponse(data: Data?, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) throws {
-        guard let data = data else {
+        } else {
             //handle error
-            return
         }
-        
-        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any?] {
-            //handle error
-            return
-        }
-        //handle error
     }
 }

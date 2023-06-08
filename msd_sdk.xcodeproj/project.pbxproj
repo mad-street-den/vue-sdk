@@ -22,9 +22,7 @@
 		26C11F7C2A1B946A00830210 /* example_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C11F7B2A1B946A00830210 /* example_appUITestsLaunchTests.swift */; };
 		F972075E2A29C4E300CAA40B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972075D2A29C4E300CAA40B /* AppManager.swift */; };
 		F97207602A29C58900CAA40B /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972075F2A29C58900CAA40B /* StringConstants.swift */; };
-		F9E64DB72A1BA2F100620A99 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA32A1BA2F100620A99 /* Model.swift */; };
-		F9E64DB82A1BA2F100620A99 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA52A1BA2F100620A99 /* Response.swift */; };
-		F9E64DB92A1BA2F100620A99 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA62A1BA2F100620A99 /* Request.swift */; };
+		F9E64DB72A1BA2F100620A99 /* RecommenationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */; };
 		F9E64DBA2A1BA2F100620A99 /* MSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA82A1BA2F100620A99 /* MSD.swift */; };
 		F9E64DBB2A1BA2F100620A99 /* MSDEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAB2A1BA2F100620A99 /* MSDEndpoint.swift */; };
 		F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAD2A1BA2F100620A99 /* Reachability.swift */; };
@@ -39,7 +37,6 @@
 		F9E64DCD2A1BA6D200620A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCC2A1BA6D200620A99 /* Constants.swift */; };
 		F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */; };
 		F9E64DD12A1BA94900620A99 /* SDKException.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD02A1BA94900620A99 /* SDKException.swift */; };
-		F9E64DD42A1BACDB00620A99 /* RecommendationCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD32A1BACDB00620A99 /* RecommendationCallback.swift */; };
 		F9E64DD62A1BAF8000620A99 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD52A1BAF8000620A99 /* BasePresenter.swift */; };
 		F9E64DD82A1BAFA100620A99 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */; };
 		F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */; };
@@ -114,9 +111,7 @@
 		26C11F7B2A1B946A00830210 /* example_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F972075D2A29C4E300CAA40B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		F972075F2A29C58900CAA40B /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
-		F9E64DA32A1BA2F100620A99 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		F9E64DA52A1BA2F100620A99 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		F9E64DA62A1BA2F100620A99 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommenationRequest.swift; sourceTree = "<group>"; };
 		F9E64DA82A1BA2F100620A99 /* MSD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSD.swift; sourceTree = "<group>"; };
 		F9E64DAB2A1BA2F100620A99 /* MSDEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSDEndpoint.swift; sourceTree = "<group>"; };
 		F9E64DAD2A1BA2F100620A99 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -129,7 +124,6 @@
 		F9E64DCC2A1BA6D200620A99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogger.swift; sourceTree = "<group>"; };
 		F9E64DD02A1BA94900620A99 /* SDKException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKException.swift; sourceTree = "<group>"; };
-		F9E64DD32A1BACDB00620A99 /* RecommendationCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCallback.swift; sourceTree = "<group>"; };
 		F9E64DD52A1BAF8000620A99 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPresenter.swift; sourceTree = "<group>"; };
@@ -261,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				F9E64DA22A1BA2F100620A99 /* General */,
-				F9E64DA42A1BA2F100620A99 /* API */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,25 +262,15 @@
 		F9E64DA22A1BA2F100620A99 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DA32A1BA2F100620A99 /* Model.swift */,
+				F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */,
 				F9FE32B22A24CA4A007E923D /* MSDError.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
 		};
-		F9E64DA42A1BA2F100620A99 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				F9E64DA52A1BA2F100620A99 /* Response.swift */,
-				F9E64DA62A1BA2F100620A99 /* Request.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		F9E64DA72A1BA2F100620A99 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DD22A1BACC000620A99 /* Callbacks */,
 				F9E64DA82A1BA2F100620A99 /* MSD.swift */,
 			);
 			path = Helper;
@@ -369,14 +352,6 @@
 				F972075F2A29C58900CAA40B /* StringConstants.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		F9E64DD22A1BACC000620A99 /* Callbacks */ = {
-			isa = PBXGroup;
-			children = (
-				F9E64DD32A1BACDB00620A99 /* RecommendationCallback.swift */,
-			);
-			path = Callbacks;
 			sourceTree = "<group>";
 		};
 		F9E64DDB2A1BB04A00620A99 /* Extensions */ = {
@@ -590,7 +565,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */,
-				F9E64DD42A1BACDB00620A99 /* RecommendationCallback.swift in Sources */,
 				F9FE32B32A24CA4A007E923D /* MSDError.swift in Sources */,
 				F9E64DBA2A1BA2F100620A99 /* MSD.swift in Sources */,
 				F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */,
@@ -598,10 +572,8 @@
 				26C11F3D2A1B944500830210 /* msd_sdk.docc in Sources */,
 				F9E64DCD2A1BA6D200620A99 /* Constants.swift in Sources */,
 				F9FE32B12A24C34A007E923D /* Utils.swift in Sources */,
-				F9E64DB92A1BA2F100620A99 /* Request.swift in Sources */,
 				F9E64DBF2A1BA2F100620A99 /* RequestError.swift in Sources */,
 				F9E64DD62A1BAF8000620A99 /* BasePresenter.swift in Sources */,
-				F9E64DB82A1BA2F100620A99 /* Response.swift in Sources */,
 				F9E64DCB2A1BA6C700620A99 /* DataValidator.swift in Sources */,
 				F9E64DBE2A1BA2F100620A99 /* RequestMethod.swift in Sources */,
 				F972075E2A29C4E300CAA40B /* AppManager.swift in Sources */,
@@ -612,7 +584,7 @@
 				F9E64DD12A1BA94900620A99 /* SDKException.swift in Sources */,
 				F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */,
 				F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */,
-				F9E64DB72A1BA2F100620A99 /* Model.swift in Sources */,
+				F9E64DB72A1BA2F100620A99 /* RecommenationRequest.swift in Sources */,
 				F9E64DDD2A1BB06400620A99 /* UserDefaults+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

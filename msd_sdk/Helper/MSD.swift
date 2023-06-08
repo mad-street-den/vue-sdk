@@ -35,5 +35,39 @@ public class MSD{
             await eventPresenter.trackEvent(eventName: eventName,pageName: pageName, properties: properties)
         }
     }
+    
+    public func getRecommendationsByModule(moduleReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+        Task {
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.module_name.rawValue : moduleReference], properties: properties,  success: { response in
+                success(response)
+            }, failure: { error in
+                failure(error)
+            })
+        }
+    }
+    
+    public func getRecommendationsByStrategy(strategyReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+        Task{
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.strategy_name.rawValue : strategyReference], properties: properties, success: { response in
+                success(response)
+            }, failure: { error in
+                failure(error)
+            })
+        }
+    }
+    
+    public func getRecommendationsByPage(pageReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+        Task{
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : pageReference], properties: properties, success: { response in
+                success(response)
+            }, failure: { error in
+                failure(error)
+            })
+        }
+    }
+    
+    public func resetUserProfile() {
+        BasePresenter().removeUserId()
+    }
 }
 
