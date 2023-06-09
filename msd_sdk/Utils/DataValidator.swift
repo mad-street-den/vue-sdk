@@ -5,7 +5,7 @@ class DataValidator {
         if Utils.checkEmptyString(token) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_GENERIC,
-                "ERROR: empty token"
+                "ERROR: \(MSDError.emptyToken)"
             )
             return false
         }
@@ -16,7 +16,7 @@ class DataValidator {
         if Utils.checkEmptyString(baseUrl) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_GENERIC,
-                "ERROR: invalidURL"
+                "ERROR: \(MSDError.invalidURL)"
             )
             return false
         }
@@ -27,7 +27,7 @@ class DataValidator {
         if Utils.checkEmptyString(userId) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_GENERIC,
-                "ERROR: emptyUserId"
+                "ERROR: \(MSDError.emptyUserId)"
             )
             return nil
         }
@@ -38,7 +38,7 @@ class DataValidator {
         if Utils.checkEmptyString(eventName) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_EVENT_TRACKING,
-                "ERROR: emptyEventName"
+                "ERROR: \(MSDError.emptyEventName)"
             )
             return false
         }
@@ -46,7 +46,7 @@ class DataValidator {
         if Utils.checkEmptyString(pageName) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_EVENT_TRACKING,
-                "ERROR: missingEventData"
+                "ERROR: \(MSDError.missingEventData)"
             )
             return false
         }

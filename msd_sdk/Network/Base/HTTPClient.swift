@@ -7,18 +7,13 @@ protocol HTTPClient {
 class ApiClient: HTTPClient {
     func sendRequest(endpoint: APIRequestProtocol, success: @escaping([String:Any?]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         guard Reachability.isConnectedToNetwork() else {
-            //handle error
+            failure(MSDError.internetUnavailable)
             return
         }
         
-        guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !msdBaseUrl.isEmpty else {
-            //handle error
-            return
-        }
-        
-        let strURL = msdBaseUrl + endpoint.path
-        guard let url = URL(string: strURL) else {
-            //handle error
+        guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !msdBaseUrl.isEmpty,
+              let url = URL(string: msdBaseUrl + endpoint.path) else {
+            failure(MSDError.invalidURL)
             return
         }
         
@@ -34,13 +29,24 @@ class ApiClient: HTTPClient {
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if error != nil {
-                //handle error
+            if let error = error {
+                if let urlError = error as? URLError {
+                    switch urlError.code {
+                    case .timedOut:
+                        failure(MSDError.requestTimeout)
+                    case .unsupportedURL:
+                        failure(MSDError.invalidURL)
+                    case .notConnectedToInternet:
+                        failure(MSDError.internetUnavailable)
+                    default:
+                        failure(MSDError(errors: ApiError(code:"\(urlError.code.rawValue)", message: error.localizedDescription)).toMap())
+                    }
+                }
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                //handle error
+                failure(MSDError.noResponse)
                 return
             }
             
@@ -51,7 +57,7 @@ class ApiClient: HTTPClient {
                     try self.handleResponse(data: data, success: failure, failure: failure)
                 }
             } catch {
-                //handle error
+                failure(MSDError.unableToDecode)
                 return
             }
         }.resume()
@@ -63,14 +69,14 @@ class ApiClient: HTTPClient {
     
     private func handleResponse(data: Data?, success: @escaping ([String: Any?]) -> Void, failure: @escaping ([String: Any?]) -> Void) throws {
         guard let data = data else {
-            //handle error
+            failure(MSDError.noResponse)
             return
         }
         
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] {
             success(json)
         } else {
-            //handle error
+            failure(MSDError.unableToDecode)
         }
     }
 }

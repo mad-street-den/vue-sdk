@@ -36,7 +36,6 @@
 		F9E64DCB2A1BA6C700620A99 /* DataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */; };
 		F9E64DCD2A1BA6D200620A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCC2A1BA6D200620A99 /* Constants.swift */; };
 		F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */; };
-		F9E64DD12A1BA94900620A99 /* SDKException.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD02A1BA94900620A99 /* SDKException.swift */; };
 		F9E64DD62A1BAF8000620A99 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD52A1BAF8000620A99 /* BasePresenter.swift */; };
 		F9E64DD82A1BAFA100620A99 /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */; };
 		F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */; };
@@ -123,7 +122,6 @@
 		F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValidator.swift; sourceTree = "<group>"; };
 		F9E64DCC2A1BA6D200620A99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogger.swift; sourceTree = "<group>"; };
-		F9E64DD02A1BA94900620A99 /* SDKException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKException.swift; sourceTree = "<group>"; };
 		F9E64DD52A1BAF8000620A99 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		F9E64DD72A1BAFA100620A99 /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
 		F9E64DD92A1BAFB000620A99 /* RecommendationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationPresenter.swift; sourceTree = "<group>"; };
@@ -254,18 +252,10 @@
 		F9E64DA12A1BA2F100620A99 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DA22A1BA2F100620A99 /* General */,
+				F9FE32B22A24CA4A007E923D /* MSDError.swift */,
+				F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F9E64DA22A1BA2F100620A99 /* General */ = {
-			isa = PBXGroup;
-			children = (
-				F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */,
-				F9FE32B22A24CA4A007E923D /* MSDError.swift */,
-			);
-			path = General;
 			sourceTree = "<group>";
 		};
 		F9E64DA72A1BA2F100620A99 /* Helper */ = {
@@ -347,7 +337,6 @@
 				F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */,
 				F9E64DCC2A1BA6D200620A99 /* Constants.swift */,
 				F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */,
-				F9E64DD02A1BA94900620A99 /* SDKException.swift */,
 				F972075D2A29C4E300CAA40B /* AppManager.swift */,
 				F972075F2A29C58900CAA40B /* StringConstants.swift */,
 			);
@@ -581,7 +570,6 @@
 				F9E64DD82A1BAFA100620A99 /* EventPresenter.swift in Sources */,
 				F97207602A29C58900CAA40B /* StringConstants.swift in Sources */,
 				F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */,
-				F9E64DD12A1BA94900620A99 /* SDKException.swift in Sources */,
 				F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */,
 				F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */,
 				F9E64DB72A1BA2F100620A99 /* RecommenationRequest.swift in Sources */,
