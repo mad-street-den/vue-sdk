@@ -39,8 +39,5 @@ class BasePresenter {
         properties.updateValue(getMadUUID(), forKey: BLOX_UUID)
         properties.updateValue(getUserId(), forKey: USER_ID)
         properties.updateValue(getBundleId(), forKey: URL_STRING)
-        properties.updateValue(mobile, forKey: PLATFORM)
-        properties.updateValue(osValue, forKey: MEDIUM)
-        properties.updateValue(EMBED_CODE, forKey: INTEGRATION_MODE)
     }
 }

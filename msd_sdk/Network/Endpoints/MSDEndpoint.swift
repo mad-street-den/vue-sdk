@@ -1,4 +1,5 @@
 enum MSDEndpoint {
+    case discover
     case track(body: [String:Any?])
     case search(body: [String:Any?])
 }
@@ -6,6 +7,8 @@ enum MSDEndpoint {
 extension MSDEndpoint: APIRequestProtocol {
     var path: String {
         switch self {
+        case .discover:
+            return DISCOVER_EVENTS_ENDPOINT
         case .track:
             return TRACK_ENDPOINT
         case .search:
@@ -14,7 +17,12 @@ extension MSDEndpoint: APIRequestProtocol {
     }
     
     var method: RequestMethod {
-        return .post
+        switch self {
+        case .discover:
+            return .get
+        case .track,.search:
+            return .post
+        }
     }
     
     var header: [String:String]? {
@@ -27,6 +35,8 @@ extension MSDEndpoint: APIRequestProtocol {
             return body
         case .search(let body):
             return body
+        default:
+            return nil
         }
     }
 }

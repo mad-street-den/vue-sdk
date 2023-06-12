@@ -15,6 +15,7 @@ public class MSD{
     private init() {
         eventPresenter = EventPresenter(msdservice: MSDService(apiClient: ApiClient()))
         recommendationPresenter = RecommendationPresenter(msdservice: MSDService(apiClient: ApiClient()))
+        eventPresenter.discoverEvents()
     }
     
     public static func initialize(token: String, baseUrl: String) -> MSD {
@@ -27,6 +28,10 @@ public class MSD{
         if let validUserId = DataValidator.validateUserId(userId) {
             BasePresenter().setUserId(userId: validUserId)
         }
+    }
+    
+    public func discoverEvents(success: @escaping(DiscoverEventsResponse) -> Void, failure: @escaping([String:Any?]) -> Void){
+        eventPresenter.discoverEvents(success: success,failure:failure)
     }
     
     public func track(eventName: String, pageName: String, properties: [String:Any?]?) {
