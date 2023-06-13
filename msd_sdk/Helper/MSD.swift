@@ -34,10 +34,10 @@ public class MSD{
         eventPresenter.discoverEvents(success: success,failure:failure)
     }
     
-    public func track(eventName: String, pageName: String, properties: [String:Any?]?) {
-        guard DataValidator.validateEventSanity(eventName: eventName,pageName:pageName) else { return }
+    public func track(eventName: String, properties: [String:Any?]?) {
+        guard DataValidator.validateEventSanity(eventName: eventName) else { return }
         Task {
-            await eventPresenter.trackEvent(eventName: eventName,pageName: pageName, properties: properties)
+            await eventPresenter.trackEvent(eventName: eventName, properties: properties)
         }
     }
     

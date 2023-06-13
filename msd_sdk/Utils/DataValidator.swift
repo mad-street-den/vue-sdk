@@ -34,19 +34,11 @@ class DataValidator {
         return userId
     }
     
-    static func validateEventSanity(eventName: String, pageName: String) -> Bool {
+    static func validateEventSanity(eventName: String) -> Bool {
         if Utils.checkEmptyString(eventName) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_EVENT_TRACKING,
                 "ERROR: \(MSDError.emptyEventName)"
-            )
-            return false
-        }
-        
-        if Utils.checkEmptyString(pageName) {
-            SDKLogger.shared.logSDKInfo(
-                LOG_INFO_TAG_EVENT_TRACKING,
-                "ERROR: \(MSDError.missingEventData)"
             )
             return false
         }

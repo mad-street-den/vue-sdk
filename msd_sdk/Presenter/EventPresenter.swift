@@ -32,14 +32,13 @@ class EventPresenter: BasePresenter {
         }
     }
     
-    func trackEvent(eventName: String, pageName: String, properties: [String:Any?]?) async {
+    func trackEvent(eventName: String, properties: [String:Any?]?) async {
         if discoverReponseList == nil {
             self.discoverEvents()
         }
         
         var finalProperties = properties ?? [:]
         finalProperties.updateValue(eventName, forKey: "event_name")
-        finalProperties.updateValue(pageName, forKey: "page_name")
         
         // Fetch the default properties for the track API
         var defaultTrackEventProperties = [String:Any?]()
