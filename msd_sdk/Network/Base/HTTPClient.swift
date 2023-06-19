@@ -52,9 +52,9 @@ class ApiClient: HTTPClient {
             
             do {
                 if self.checkStatusCode(httpResponse) {
-                    try self.handleResponse(data: data, success: success, failure: failure)
+                    try self.handleSuccessResponse(data: data, success: success, failure: failure)
                 } else {
-                    try self.handleResponse(data: data, success: failure, failure: failure)
+                    try self.handleFailureResponse(data: data, httpResponse: httpResponse, failure: failure)
                 }
             } catch {
                 failure(MSDError.unableToDecode)
@@ -67,7 +67,7 @@ class ApiClient: HTTPClient {
         return response.statusCode == 200
     }
     
-    private func handleResponse(data: Data?, success: @escaping ([String: Any?]) -> Void, failure: @escaping ([String: Any?]) -> Void) throws {
+    private func handleSuccessResponse(data: Data?, success: @escaping ([String: Any?]) -> Void, failure: @escaping ([String: Any?]) -> Void) throws {
         guard let data = data else {
             failure(MSDError.noResponse)
             return
@@ -77,6 +77,25 @@ class ApiClient: HTTPClient {
             success(json)
         } else {
             failure(MSDError.unableToDecode)
+        }
+    }
+    
+    private func handleFailureResponse(data: Data?, httpResponse: HTTPURLResponse, failure: @escaping ([String: Any?]) -> Void) throws {
+        guard let data = data else {
+            failure(MSDError.noResponse)
+            return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any?] {
+            failure(json)
+        } else {
+            switch statusCode {
+            case 500...599:
+                failure(MSDError.serverUnavailable)
+            default:
+                failure(MSDError.unknownError)
+            }
         }
     }
 }

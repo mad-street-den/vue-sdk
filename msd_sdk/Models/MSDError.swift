@@ -55,7 +55,9 @@ public extension MSDError {
     static let invalidURL = errorCode(.ERR007)
     static let emptyUserId = errorCode(.ERR008)
     static let noResponse = errorCode(.ERR009)
-    static let unableToDecode = errorCode(.ERR011)
+    static let unableToDecode = errorCode(.ERR010)
+    static let unknownError = errorCode(.ERR011)
+    static let serverUnavailable = errorCode(.ERR012)
 }
 
 public enum ErrorCode: String {
@@ -68,7 +70,9 @@ public enum ErrorCode: String {
     case ERR007
     case ERR008
     case ERR009
+    case ERR010
     case ERR011
+    case ERR012
     
     var message: String {
         switch  self{
@@ -90,8 +94,12 @@ public enum ErrorCode: String {
             return EMPTY_USER_ID
         case .ERR009:
             return NO_RESPONSE
-        case .ERR011:
+        case .ERR010:
             return UNABLE_TO_DECODE
+        case .ERR011:
+            return UNKNOWN_ERROR
+        case .ERR012:
+            return SERVER_UNAVAILABLE
         }
     }
 }
