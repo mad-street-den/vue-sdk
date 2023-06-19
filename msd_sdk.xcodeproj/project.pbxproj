@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15DA0ABFDB2D73E567BDE3AF /* Pods_msd_sdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A96FF68C7866F10041BE0A6 /* Pods_msd_sdkTests.framework */; };
 		26C11F3D2A1B944500830210 /* msd_sdk.docc in Sources */ = {isa = PBXBuildFile; fileRef = 26C11F3C2A1B944500830210 /* msd_sdk.docc */; };
 		26C11F432A1B944600830210 /* msd_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C11F382A1B944500830210 /* msd_sdk.framework */; };
 		26C11F482A1B944600830210 /* msd_sdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C11F472A1B944600830210 /* msd_sdkTests.swift */; };
 		26C11F492A1B944600830210 /* msd_sdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 26C11F3B2A1B944500830210 /* msd_sdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F90DB44A2A40031D003B318D /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90DB4492A40031D003B318D /* GeneratedMocks.swift */; };
 		F972075E2A29C4E300CAA40B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972075D2A29C4E300CAA40B /* AppManager.swift */; };
 		F97207602A29C58900CAA40B /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F972075F2A29C58900CAA40B /* StringConstants.swift */; };
 		F9E64DB72A1BA2F100620A99 /* RecommenationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */; };
@@ -50,6 +52,10 @@
 		26C11F3C2A1B944500830210 /* msd_sdk.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = msd_sdk.docc; sourceTree = "<group>"; };
 		26C11F422A1B944600830210 /* msd_sdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = msd_sdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C11F472A1B944600830210 /* msd_sdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msd_sdkTests.swift; sourceTree = "<group>"; };
+		7496BA17850FDFF1864B0C0B /* Pods-msd_sdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-msd_sdkTests.release.xcconfig"; path = "Target Support Files/Pods-msd_sdkTests/Pods-msd_sdkTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A96FF68C7866F10041BE0A6 /* Pods_msd_sdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_msd_sdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6FB732B31025C778B96E128 /* Pods-msd_sdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-msd_sdkTests.debug.xcconfig"; path = "Target Support Files/Pods-msd_sdkTests/Pods-msd_sdkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F90DB4492A40031D003B318D /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		F972075D2A29C4E300CAA40B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		F972075F2A29C58900CAA40B /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommenationRequest.swift; sourceTree = "<group>"; };
@@ -86,18 +92,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C11F432A1B944600830210 /* msd_sdk.framework in Frameworks */,
+				15DA0ABFDB2D73E567BDE3AF /* Pods_msd_sdkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		235797A5F99DCE9FB06248EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6FB732B31025C778B96E128 /* Pods-msd_sdkTests.debug.xcconfig */,
+				7496BA17850FDFF1864B0C0B /* Pods-msd_sdkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		26C11F2E2A1B944500830210 = {
 			isa = PBXGroup;
 			children = (
 				26C11F3A2A1B944500830210 /* msd_sdk */,
 				26C11F462A1B944600830210 /* msd_sdkTests */,
 				26C11F392A1B944500830210 /* Products */,
+				235797A5F99DCE9FB06248EA /* Pods */,
+				346C831A1D528A7645FADF31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,9 +145,18 @@
 		26C11F462A1B944600830210 /* msd_sdkTests */ = {
 			isa = PBXGroup;
 			children = (
+				F90DB4492A40031D003B318D /* GeneratedMocks.swift */,
 				26C11F472A1B944600830210 /* msd_sdkTests.swift */,
 			);
 			path = msd_sdkTests;
+			sourceTree = "<group>";
+		};
+		346C831A1D528A7645FADF31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A96FF68C7866F10041BE0A6 /* Pods_msd_sdkTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F9E64DA12A1BA2F100620A99 /* Models */ = {
@@ -264,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26C11F4F2A1B944600830210 /* Build configuration list for PBXNativeTarget "msd_sdkTests" */;
 			buildPhases = (
+				52375360DFDBF38E3FBCE717 /* [CP] Check Pods Manifest.lock */,
+				26FD68AE2A3C2E8C0092CC8A /* ShellScript */,
 				26C11F3E2A1B944600830210 /* Sources */,
 				26C11F3F2A1B944600830210 /* Frameworks */,
 				26C11F402A1B944600830210 /* Resources */,
+				A90E29957B9E5C8FAD87613F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -332,6 +362,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26FD68AE2A3C2E8C0092CC8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION == \"indexbuild\" ]; then\n  echo \"Not running Cuckoo generator during indexing.\"\n  exit 0\nfi\n\n# Skip for preview builds\nif [ \"${ENABLE_PREVIEWS}\" = \"YES\" ]; then\n  echo \"Not running Cuckoo generator during preview builds.\"\n  exit 0\nfi\n\n# Define output file. Change \"${PROJECT_DIR}/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"${PROJECT_DIR}/${PROJECT_NAME}Tests/GeneratedMocks.swift\"\necho \"Generated Mocks File = ${OUTPUT_FILE}\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/${PROJECT_NAME}\"\necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"${PROJECT_NAME}\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"${INPUT_DIR}/Network/Services/MSDService.swift\" \\\n\"${INPUT_DIR}/Network/Base/HTTPClient.swift\"\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n\n";
+		};
+		52375360DFDBF38E3FBCE717 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-msd_sdkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A90E29957B9E5C8FAD87613F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-msd_sdkTests/Pods-msd_sdkTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-msd_sdkTests/Pods-msd_sdkTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-msd_sdkTests/Pods-msd_sdkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		26C11F342A1B944500830210 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C11F482A1B944600830210 /* msd_sdkTests.swift in Sources */,
+				F90DB44A2A40031D003B318D /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +653,7 @@
 		};
 		26C11F502A1B944600830210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6FB732B31025C778B96E128 /* Pods-msd_sdkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -580,6 +671,7 @@
 		};
 		26C11F512A1B944600830210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7496BA17850FDFF1864B0C0B /* Pods-msd_sdkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

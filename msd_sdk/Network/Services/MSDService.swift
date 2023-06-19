@@ -37,7 +37,7 @@ class MSDService: MSDServiceable {
                 let decoder = JSONDecoder()
                 let discoverEventResponse = try decoder.decode(DiscoverEventsResponse.self, from: jsonData)
                 success(discoverEventResponse)
-            } catch let error{
+            } catch _{
                 failure(MSDError.unableToDecode)
             }
         }, failure: { error in
