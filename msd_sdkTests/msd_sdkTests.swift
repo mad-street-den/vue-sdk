@@ -99,11 +99,11 @@ final class searchRecommendationTests: XCTestCase{
     func testRecommendationSuccess() async{
         let mockResponse: [[String:Any?]] = [["title":"Shirt","imageUrl":"exampleImageUrl"]]
         stub(mockService) { mock in
-            when(mock.getRecommendations(search: any(), success: any(), failure: any())).then({ body,succeess,failure in
+            when(mock.getRecommendations(search: any(),correlationId: any(), success: any(), failure: any())).then({ body,id,succeess,failure in
                 succeess(mockResponse)
             })
         }
-        await recommendationPresenter?.getRecommendations(searchType: [:], properties: RecommendationRequest(catalogs: [:]), success: { res in
+        await recommendationPresenter?.getRecommendations(searchType: [:], properties: RecommendationRequest(catalogs: [:]), correlationId: "", success: { res in
             let resDict = res
             XCTAssertEqual(resDict.count, mockResponse.count)
             for (index, dict) in resDict.enumerated() {
@@ -120,11 +120,11 @@ final class searchRecommendationTests: XCTestCase{
     func testRecommendationFailure() async{
         let mockError: [String:Any?] = ["requestId":"1234","error":["errorCode":400, "measage": "Client Side Error"]]
         stub(mockService) { mock in
-            when(mock.getRecommendations(search: any(), success: any(), failure: any())).then({ body,succeess,failure in
+            when(mock.getRecommendations(search: any(),correlationId: anyString(), success: any(), failure: any())).then { body,id,succeess,failure in
                 failure(mockError)
-            })
+            }
         }
-        await recommendationPresenter?.getRecommendations(searchType: [:], properties: RecommendationRequest(catalogs: [:]), success: { res in
+        await recommendationPresenter?.getRecommendations(searchType: [:], properties: RecommendationRequest(catalogs: [:]), correlationId: "", success: { res in
             XCTFail("Failed to test RecommendationFailure")
         }, failure: { err in
             for (key, value) in err {

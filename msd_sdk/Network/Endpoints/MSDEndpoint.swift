@@ -1,7 +1,7 @@
 enum MSDEndpoint {
     case discover
-    case track(body: [String:Any?])
-    case search(body: [String:Any?])
+    case track(body: [String: Any?], headers: [String: String]?)
+    case search(body: [String: Any?], headers: [String: String]?)
 }
 
 extension MSDEndpoint: APIRequestProtocol {
@@ -20,20 +20,26 @@ extension MSDEndpoint: APIRequestProtocol {
         switch self {
         case .discover:
             return .get
-        case .track,.search:
+        case .track, .search:
             return .post
         }
     }
     
-    var header: [String:String]? {
-        return [:]
+    var header: [String: String]? {
+        switch self {
+        case .track(_, let headers?),
+             .search(_, let headers?):
+            return headers
+        default:
+            return nil
+        }
     }
     
-    var body: [String:Any?]? {
+    var body: [String: Any?]? {
         switch self {
-        case .track(let body):
+        case .track(body: let body, _):
             return body
-        case .search(let body):
+        case .search(body: let body, _):
             return body
         default:
             return nil

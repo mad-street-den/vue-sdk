@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-06-19 03:43:42 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-06-20 02:30:39 +0000
 
 
 import Cuckoo
@@ -246,7 +246,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-06-19 03:43:42 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-06-20 02:30:39 +0000
 
 
 import Cuckoo
@@ -285,19 +285,19 @@ import Foundation
     
     
     
-     func track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
+     func track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
         
     return await cuckoo_manager.call(
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """,
-            parameters: (body, success, failure),
-            escapingParameters: (body, success, failure),
+            parameters: (body, correlationId, success, failure),
+            escapingParameters: (body, correlationId, success, failure),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: await __defaultImplStub!.track(body: body, success: success, failure: failure))
+            defaultCall: await __defaultImplStub!.track(body: body, correlationId: correlationId, success: success, failure: failure))
         
     }
     
@@ -305,19 +305,19 @@ import Foundation
     
     
     
-     func getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
+     func getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
         
     return await cuckoo_manager.call(
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """,
-            parameters: (search, success, failure),
-            escapingParameters: (search, success, failure),
+            parameters: (search, correlationId, success, failure),
+            escapingParameters: (search, correlationId, success, failure),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: await __defaultImplStub!.getRecommendations(search: search, success: success, failure: failure))
+            defaultCall: await __defaultImplStub!.getRecommendations(search: search, correlationId: correlationId, success: success, failure: failure))
         
     }
     
@@ -353,22 +353,22 @@ import Foundation
         
         
         
-        func track<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(body: M1, success: M2, failure: M3) -> Cuckoo.ProtocolStubNoReturnFunction<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.MatchedType == ([String:Any?]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func track<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(body: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.ProtocolStubNoReturnFunction<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([String:Any?]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return .init(stub: cuckoo_manager.createStub(for: MockMSDServiceable.self, method:
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, parameterMatchers: matchers))
         }
         
         
         
         
-        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(search: M1, success: M2, failure: M3) -> Cuckoo.ProtocolStubNoReturnFunction<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.MatchedType == ([[String:Any?]]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(search: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.ProtocolStubNoReturnFunction<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([[String:Any?]]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return .init(stub: cuckoo_manager.createStub(for: MockMSDServiceable.self, method:
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, parameterMatchers: matchers))
         }
         
@@ -403,11 +403,11 @@ import Foundation
         
         
         @discardableResult
-        func track<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(body: M1, success: M2, failure: M3) -> Cuckoo.__DoNotUse<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.MatchedType == ([String:Any?]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func track<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(body: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.__DoNotUse<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([String:Any?]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return cuckoo_manager.verify(
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -415,11 +415,11 @@ import Foundation
         
         
         @discardableResult
-        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(search: M1, success: M2, failure: M3) -> Cuckoo.__DoNotUse<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.MatchedType == ([[String:Any?]]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(search: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.__DoNotUse<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([[String:Any?]]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return cuckoo_manager.verify(
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -449,7 +449,7 @@ import Foundation
     
     
     
-     func track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
+     func track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -457,7 +457,7 @@ import Foundation
     
     
     
-     func getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
+     func getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -507,19 +507,19 @@ import Foundation
     
     
     
-     override func track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
+     override func track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
         
     return await cuckoo_manager.call(
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """,
-            parameters: (body, success, failure),
-            escapingParameters: (body, success, failure),
+            parameters: (body, correlationId, success, failure),
+            escapingParameters: (body, correlationId, success, failure),
             superclassCall:
                 
-                await super.track(body: body, success: success, failure: failure)
+                await super.track(body: body, correlationId: correlationId, success: success, failure: failure)
                 ,
-            defaultCall: await __defaultImplStub!.track(body: body, success: success, failure: failure))
+            defaultCall: await __defaultImplStub!.track(body: body, correlationId: correlationId, success: success, failure: failure))
         
     }
     
@@ -527,19 +527,19 @@ import Foundation
     
     
     
-     override func getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
+     override func getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async {
         
     return await cuckoo_manager.call(
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """,
-            parameters: (search, success, failure),
-            escapingParameters: (search, success, failure),
+            parameters: (search, correlationId, success, failure),
+            escapingParameters: (search, correlationId, success, failure),
             superclassCall:
                 
-                await super.getRecommendations(search: search, success: success, failure: failure)
+                await super.getRecommendations(search: search, correlationId: correlationId, success: success, failure: failure)
                 ,
-            defaultCall: await __defaultImplStub!.getRecommendations(search: search, success: success, failure: failure))
+            defaultCall: await __defaultImplStub!.getRecommendations(search: search, correlationId: correlationId, success: success, failure: failure))
         
     }
     
@@ -575,22 +575,22 @@ import Foundation
         
         
         
-        func track<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(body: M1, success: M2, failure: M3) -> Cuckoo.ClassStubNoReturnFunction<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.MatchedType == ([String:Any?]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func track<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(body: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.ClassStubNoReturnFunction<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([String:Any?]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return .init(stub: cuckoo_manager.createStub(for: MockMSDService.self, method:
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, parameterMatchers: matchers))
         }
         
         
         
         
-        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(search: M1, success: M2, failure: M3) -> Cuckoo.ClassStubNoReturnFunction<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.MatchedType == ([[String:Any?]]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(search: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.ClassStubNoReturnFunction<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([[String:Any?]]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return .init(stub: cuckoo_manager.createStub(for: MockMSDService.self, method:
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, parameterMatchers: matchers))
         }
         
@@ -625,11 +625,11 @@ import Foundation
         
         
         @discardableResult
-        func track<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(body: M1, success: M2, failure: M3) -> Cuckoo.__DoNotUse<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.MatchedType == ([String:Any?]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func track<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(body: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.__DoNotUse<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([String:Any?]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([String:Any?]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: body) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return cuckoo_manager.verify(
     """
-    track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -637,11 +637,11 @@ import Foundation
         
         
         @discardableResult
-        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(search: M1, success: M2, failure: M3) -> Cuckoo.__DoNotUse<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.MatchedType == ([[String:Any?]]) -> Void, M3.MatchedType == ([String:Any?]) -> Void {
-            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: success) { $0.1 }, wrap(matchable: failure) { $0.2 }]
+        func getRecommendations<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.Matchable, M4: Cuckoo.Matchable>(search: M1, correlationId: M2, success: M3, failure: M4) -> Cuckoo.__DoNotUse<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void), Void> where M1.MatchedType == [String:Any?], M2.OptionalMatchedType == String, M3.MatchedType == ([[String:Any?]]) -> Void, M4.MatchedType == ([String:Any?]) -> Void {
+            let matchers: [Cuckoo.ParameterMatcher<([String:Any?], String?, ([[String:Any?]]) -> Void, ([String:Any?]) -> Void)>] = [wrap(matchable: search) { $0.0 }, wrap(matchable: correlationId) { $0.1 }, wrap(matchable: success) { $0.2 }, wrap(matchable: failure) { $0.3 }]
             return cuckoo_manager.verify(
     """
-    getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
+    getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async
     """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
         }
         
@@ -671,7 +671,7 @@ import Foundation
     
     
     
-     override func track(body: [String:Any?], success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
+     override func track(body: [String:Any?], correlationId: String?, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -679,7 +679,7 @@ import Foundation
     
     
     
-     override func getRecommendations(search: [String:Any?], success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
+     override func getRecommendations(search: [String:Any?], correlationId: String?, success: @escaping ([[String:Any?]]) -> Void, failure: @escaping ([String:Any?]) -> Void) async  {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     

@@ -34,16 +34,16 @@ public class MSD{
         eventPresenter.discoverEvents(success: success,failure:failure)
     }
     
-    public func track(eventName: String, properties: [String:Any?]?) {
+    public func track(eventName: String, properties: [String:Any?]?, correlationId: String? = nil) {
         guard DataValidator.validateEventSanity(eventName: eventName) else { return }
         Task {
-            await eventPresenter.trackEvent(eventName: eventName, properties: properties)
+            await eventPresenter.trackEvent(eventName: eventName, properties: properties, correlationId: correlationId)
         }
     }
     
-    public func getRecommendationsByModule(moduleReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByModule(moduleReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task {
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.module_name.rawValue : moduleReference], properties: properties,  success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.module_name.rawValue : moduleReference], properties: properties, correlationId:correlationId,  success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)
@@ -51,9 +51,9 @@ public class MSD{
         }
     }
     
-    public func getRecommendationsByStrategy(strategyReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByStrategy(strategyReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task{
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.strategy_name.rawValue : strategyReference], properties: properties, success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.strategy_name.rawValue : strategyReference], properties: properties, correlationId: correlationId, success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)
@@ -61,9 +61,9 @@ public class MSD{
         }
     }
     
-    public func getRecommendationsByPage(pageReference: String, properties: RecommendationRequest, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByPage(pageReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task{
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : pageReference], properties: properties, success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : pageReference], properties: properties, correlationId: correlationId, success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)

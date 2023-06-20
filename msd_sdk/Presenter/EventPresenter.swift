@@ -32,7 +32,7 @@ class EventPresenter: BasePresenter {
         }
     }
     
-    func trackEvent(eventName: String, properties: [String:Any?]?) async {
+    func trackEvent(eventName: String, properties: [String:Any?]?, correlationId: String?) async {
         if discoverReponseList == nil {
             self.discoverEvents()
         }
@@ -49,7 +49,7 @@ class EventPresenter: BasePresenter {
         defaultTrackEventProperties = getPropertiesForEventName(eventName, defaultKeys: defaultTrackEventProperties)
         finalProperties.merge(defaultTrackEventProperties) { (_, new) in new }
         
-        await msdservice.track(body: finalProperties, success: { response in
+        await msdservice.track(body: finalProperties, correlationId: correlationId, success: { response in
             SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_EVENT_TRACKING, String(describing: response))
         }, failure: { error in
             SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_EVENT_TRACKING, String(describing: error))

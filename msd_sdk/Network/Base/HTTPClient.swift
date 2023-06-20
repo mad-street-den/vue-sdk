@@ -20,6 +20,7 @@ class ApiClient: HTTPClient {
         var request = URLRequest(url: url)
         request.timeoutInterval = 60
         request.httpMethod = endpoint.method.rawValue
+        request.allHTTPHeaderFields = endpoint.header
         request.setValue(AppManager.shared.apiToken ?? "", forHTTPHeaderField: "x-api-key")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
