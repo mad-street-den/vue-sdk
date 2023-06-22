@@ -19,8 +19,10 @@ public class MSD{
     }
     
     public static func initialize(token: String, baseUrl: String) -> MSD {
-        if(DataValidator.validateClientToken(token)) { AppManager.shared.apiToken = token }
-        if(DataValidator.validateClientbaseUrl(baseUrl)) { AppManager.shared.msdBaseUrl = baseUrl }
+        let _ = DataValidator.validateClientToken(token)
+        AppManager.shared.apiToken = token
+        let _ = DataValidator.validateClientbaseUrl(baseUrl)
+        AppManager.shared.msdBaseUrl = baseUrl
         return MSD()
     }
     

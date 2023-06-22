@@ -17,16 +17,9 @@ class EventPresenter: BasePresenter {
         Task{
             await msdservice.discoverEvents(success: { response in
                 self.discoverReponseList = response
-                if success == nil {
-                    // Log the response during initialization
-                    SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_GENERIC, "discover success")
-                }
                 success?(response)
             }, failure: { error in
-                if failure == nil {
-                    // Log the error during initialization
-                    SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_GENERIC, String(describing: error))
-                }
+                SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_DISCOVER_EVENTS, String(describing: error))
                 failure?(error)
             })
         }

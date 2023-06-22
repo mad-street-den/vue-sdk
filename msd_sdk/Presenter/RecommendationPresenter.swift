@@ -13,7 +13,6 @@ class RecommendationPresenter: BasePresenter {
         addDefaultProperties(properties: &param)
         addRecommendationDefaultProperties(properties: &param)
         await msdservice.getRecommendations(search: param, correlationId: correlationId, success: { response in
-            SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_RECOMMENDATION, String(describing: response))
             success(response)
         }, failure: { error in
             SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_RECOMMENDATION, String(describing: error))

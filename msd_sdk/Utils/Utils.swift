@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class Utils {
     static func checkNullOrEmptyString(_ value: String?) -> Bool {
@@ -14,5 +15,13 @@ class Utils {
         }
         return false
     }
+    
+    static func isValidURL(_ urlString: String) -> Bool {
+        if let url = URL(string: urlString) {
+            return UIApplication.shared.canOpenURL(url)
+        }
+        return false
+    }
+    
 }
 
