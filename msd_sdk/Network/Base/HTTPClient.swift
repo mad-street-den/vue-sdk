@@ -30,6 +30,7 @@ class ApiClient: HTTPClient {
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
+            SDKLogger.shared.isLoggingEnabled ? self.printAPIRequestResponse(urlRequest: request, responseData: data, response: response, error: error) : nil
             if let error = error {
                 if let urlError = error as? URLError {
                     switch urlError.code {
@@ -97,6 +98,50 @@ class ApiClient: HTTPClient {
             default:
                 failure(MSDError.unknownError)
             }
+        }
+    }
+    
+    func printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?) {
+        // Print API request details
+        if let url = urlRequest.url {
+            print("URL: \(url)")
+        }
+        
+        if let method = urlRequest.httpMethod {
+            print("HTTP Method: \(method)")
+        }
+        
+        if let headers = urlRequest.allHTTPHeaderFields {
+            print("Headers:")
+            for (key, value) in headers {
+                print("\(key): \(value)")
+            }
+        }
+        
+        if let bodyData = urlRequest.httpBody, let bodyString = String(data: bodyData, encoding: .utf8) {
+            print("Body:")
+            print(bodyString)
+        }
+        
+        // Print API response details
+        if let httpResponse = response as? HTTPURLResponse {
+            print("Response Status Code: \(httpResponse.statusCode)")
+            
+            if let responseHeaders = httpResponse.allHeaderFields as? [String: Any] {
+                print("Response Headers:")
+                for (key, value) in responseHeaders {
+                    print("\(key): \(value)")
+                }
+            }
+        }
+        
+        if let responseData = responseData, let responseString = String(data: responseData, encoding: .utf8) {
+            print("Response Body:")
+            print(responseString)
+        }
+        
+        if let error = error {
+            print("Error: \(error)")
         }
     }
 }

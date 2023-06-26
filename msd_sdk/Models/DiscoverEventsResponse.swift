@@ -13,7 +13,7 @@ public struct DiscoverEventsResponse: Codable, Equatable {
 }
 
 public struct EventDataContainer: Codable, Equatable {
-    public let accountMetadata: AccountMetadata?
+    public let accountMetadata: [AccountMetadata]?
     public let events: [EventData]?
     enum CodingKeys: String, CodingKey {
         case accountMetadata = "account-metadata"
