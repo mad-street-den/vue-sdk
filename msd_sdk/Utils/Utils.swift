@@ -16,11 +16,12 @@ class Utils {
         return false
     }
     
-    static func isValidURL(_ urlString: String) -> Bool {
-        if let url = URL(string: urlString) {
-            return UIApplication.shared.canOpenURL(url)
-        }
-        return false
+    static func isValidUrl(_ url: String) -> Bool {
+        let urlPattern = #"""
+                (?i)\b((?:https?|ftp):\/\/|www\.)\S+\.\S+\b([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*))
+                """#
+        let urlTest = NSPredicate(format:"SELF MATCHES %@", urlPattern)
+        return urlTest.evaluate(with: url)
     }
     
 }

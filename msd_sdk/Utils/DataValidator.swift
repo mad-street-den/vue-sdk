@@ -13,7 +13,7 @@ class DataValidator {
     }
     
     static func validateClientbaseUrl(_ baseUrl: String) -> Bool{
-        if !Utils.isValidURL(baseUrl) {
+        if !Utils.isValidUrl(baseUrl) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_GENERIC,
                 "ERROR: \(MSDError.invalidURL)"

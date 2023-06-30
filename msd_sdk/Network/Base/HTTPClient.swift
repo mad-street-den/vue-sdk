@@ -11,8 +11,12 @@ class ApiClient: HTTPClient {
             return
         }
         
-        guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !msdBaseUrl.isEmpty,
-              let url = URL(string: msdBaseUrl + endpoint.path) else {
+        guard let msdBaseUrl = AppManager.shared.msdBaseUrl, !Utils.isValidUrl(msdBaseUrl) else {
+            failure(MSDError.invalidURL)
+            return
+        }
+        
+        guard let url = URL(string: msdBaseUrl + endpoint.path) else {
             failure(MSDError.invalidURL)
             return
         }
@@ -36,9 +40,9 @@ class ApiClient: HTTPClient {
                     switch urlError.code {
                     case .timedOut:
                         failure(MSDError.requestTimeout)
-                    case .unsupportedURL:
+                    case .unsupportedURL, .badURL, .cannotFindHost:
                         failure(MSDError.invalidURL)
-                    case .notConnectedToInternet:
+                    case .notConnectedToInternet, .networkConnectionLost:
                         failure(MSDError.internetUnavailable)
                     default:
                         failure(MSDError(errors: ApiError(code:"\(urlError.code.rawValue)", message: error.localizedDescription)).toMap())

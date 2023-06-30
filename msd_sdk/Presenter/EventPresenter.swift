@@ -35,14 +35,16 @@ class EventPresenter: BasePresenter {
         
         // Fetch the default properties for the track API
         var defaultTrackEventProperties = [String:Any?]()
-        addDefaultProperties(properties: &defaultTrackEventProperties)
-        addTrackDefaultProperties(properties: &defaultTrackEventProperties)
+        addSuperProperties(to: &defaultTrackEventProperties)
         
         // Update the keys of the properties map based on the current event name
         defaultTrackEventProperties = getPropertiesForEventName(eventName, defaultKeys: defaultTrackEventProperties)
         finalProperties.merge(defaultTrackEventProperties) { (_, new) in new }
         
-        await msdservice.track(body: finalProperties, correlationId: correlationId, success: { response in
+        //to remove nil values if any
+        let filteredProperties = finalProperties.compactMapValues { $0 }
+        
+        await msdservice.track(body: filteredProperties, correlationId: correlationId, success: { response in
             SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_EVENT_TRACKING, String(describing: response))
         }, failure: { error in
             SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_EVENT_TRACKING, String(describing: error))
@@ -51,13 +53,6 @@ class EventPresenter: BasePresenter {
 }
 
 extension EventPresenter{
-    func addTrackDefaultProperties(properties: inout [String:Any?]){
-        properties.updateValue(ios, forKey: PLATFORM)
-        properties.updateValue(application, forKey: MEDIUM)
-        properties.updateValue(getCurrentTimestamp(), forKey:TIME_STAMP)
-        properties.updateValue(ios, forKey: REFERRER)
-    }
-    
     func getPropertiesForEventName(_ eventName: String, defaultKeys: [String: Any?]) -> [String: Any] {
         var properties: [String: Any] = [:]
         
