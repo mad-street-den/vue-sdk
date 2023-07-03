@@ -30,18 +30,12 @@ class BasePresenter {
         }
     }
     
-    func getCurrentTimestamp() -> Int {
-        let timestamp = Int(Date().timeIntervalSince1970 * 1000)
-        return timestamp
-    }
-    
     func addSuperProperties(to properties: inout [String:Any?]) {
         properties.updateValue(getMadUUID(), forKey: BLOX_UUID)
         properties.updateValue(getUserId(), forKey: USER_ID)
         properties.updateValue(getBundleId(), forKey: URL_STRING)
         properties.updateValue(ios, forKey: PLATFORM)
         properties.updateValue(application, forKey: MEDIUM)
-        properties.updateValue(getCurrentTimestamp(), forKey:TIME_STAMP)
         properties.updateValue(ios, forKey: REFERRER)
     }
 }
