@@ -17,12 +17,10 @@ class Utils {
     }
     
     static func isValidUrl(_ url: String) -> Bool {
-        let urlPattern = #"""
-                (?i)\b((?:https?|ftp):\/\/|www\.)\S+\.\S+\b([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*))
-                """#
-        let urlTest = NSPredicate(format:"SELF MATCHES %@", urlPattern)
-        return urlTest.evaluate(with: url)
+        if url.isEmpty {
+            return false
+        }
+        return url.lowercased().hasPrefix("http://") || url.lowercased().hasPrefix("https://")
     }
-    
 }
 

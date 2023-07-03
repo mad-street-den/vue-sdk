@@ -183,3 +183,28 @@ class DataValidatorTests: XCTestCase {
         XCTAssertFalse(isValidEventName, "Empty event name validation failed")
     }
 }
+
+class UtilsTests: XCTestCase {
+    func testCheckNullOrEmptyString() {
+        XCTAssertTrue(Utils.checkNullOrEmptyString(nil))
+        XCTAssertTrue(Utils.checkNullOrEmptyString(""))
+        XCTAssertFalse(Utils.checkNullOrEmptyString("Hello"))
+    }
+    
+    func testCheckEmptyString() {
+        XCTAssertTrue(Utils.checkEmptyString(""))
+        XCTAssertFalse(Utils.checkEmptyString("Hello"))
+    }
+    
+    func testIsValidUrl() {
+        XCTAssertTrue(Utils.isValidUrl("http://www.example.com"))
+        XCTAssertTrue(Utils.isValidUrl("https://www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl(" https://www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl(" http://www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl("www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl("example.com"))
+        XCTAssertFalse(Utils.isValidUrl("ftp://www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl("://www.example.com"))
+        XCTAssertFalse(Utils.isValidUrl(""))
+    }
+}

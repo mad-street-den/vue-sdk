@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-06-20 02:30:39 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-07-03 06:28:15 +0000
 
 
 import Cuckoo
@@ -174,6 +174,26 @@ import Foundation
     }
     
     
+    
+    
+    
+     override func printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?)  {
+        
+    return cuckoo_manager.call(
+    """
+    printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?)
+    """,
+            parameters: (urlRequest, responseData, response, error),
+            escapingParameters: (urlRequest, responseData, response, error),
+            superclassCall:
+                
+                super.printAPIRequestResponse(urlRequest: urlRequest, responseData: responseData, response: response, error: error)
+                ,
+            defaultCall: __defaultImplStub!.printAPIRequestResponse(urlRequest: urlRequest, responseData: responseData, response: response, error: error))
+        
+    }
+    
+    
 
      struct __StubbingProxy_ApiClient: Cuckoo.StubbingProxy {
         private let cuckoo_manager: Cuckoo.MockManager
@@ -190,6 +210,17 @@ import Foundation
             return .init(stub: cuckoo_manager.createStub(for: MockApiClient.self, method:
     """
     sendRequest(endpoint: APIRequestProtocol, success: @escaping ([String:Any?]) -> Void, failure: @escaping ([String:Any?]) -> Void)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func printAPIRequestResponse<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.OptionalMatchable, M4: Cuckoo.OptionalMatchable>(urlRequest: M1, responseData: M2, response: M3, error: M4) -> Cuckoo.ClassStubNoReturnFunction<(URLRequest, Data?, URLResponse?, Error?)> where M1.MatchedType == URLRequest, M2.OptionalMatchedType == Data, M3.OptionalMatchedType == URLResponse, M4.OptionalMatchedType == Error {
+            let matchers: [Cuckoo.ParameterMatcher<(URLRequest, Data?, URLResponse?, Error?)>] = [wrap(matchable: urlRequest) { $0.0 }, wrap(matchable: responseData) { $0.1 }, wrap(matchable: response) { $0.2 }, wrap(matchable: error) { $0.3 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockApiClient.self, method:
+    """
+    printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?)
     """, parameterMatchers: matchers))
         }
         
@@ -222,6 +253,18 @@ import Foundation
         }
         
         
+        
+        
+        @discardableResult
+        func printAPIRequestResponse<M1: Cuckoo.Matchable, M2: Cuckoo.OptionalMatchable, M3: Cuckoo.OptionalMatchable, M4: Cuckoo.OptionalMatchable>(urlRequest: M1, responseData: M2, response: M3, error: M4) -> Cuckoo.__DoNotUse<(URLRequest, Data?, URLResponse?, Error?), Void> where M1.MatchedType == URLRequest, M2.OptionalMatchedType == Data, M3.OptionalMatchedType == URLResponse, M4.OptionalMatchedType == Error {
+            let matchers: [Cuckoo.ParameterMatcher<(URLRequest, Data?, URLResponse?, Error?)>] = [wrap(matchable: urlRequest) { $0.0 }, wrap(matchable: responseData) { $0.1 }, wrap(matchable: response) { $0.2 }, wrap(matchable: error) { $0.3 }]
+            return cuckoo_manager.verify(
+    """
+    printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
     }
 }
 
@@ -240,13 +283,21 @@ import Foundation
     }
     
     
+    
+    
+    
+     override func printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    
 }
 
 
 
 
 
-// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-06-20 02:30:39 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-07-03 06:28:15 +0000
 
 
 import Cuckoo
