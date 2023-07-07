@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-07-03 06:28:15 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Base/HTTPClient.swift at 2023-07-07 08:17:49 +0000
 
 
 import Cuckoo
@@ -297,7 +297,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-07-03 06:28:15 +0000
+// MARK: - Mocks generated from file: msd_sdk/Network/Services/MSDService.swift at 2023-07-07 08:17:49 +0000
 
 
 import Cuckoo

@@ -96,7 +96,17 @@ public class MSDInstance{
         }
     }
     
-    public func resetUserProfile() {
+    public func getRecommendationsByText(textReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+        Task{
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : textReference], properties: properties, correlationId: correlationId, success: { response in
+                success(response)
+            }, failure: { error in
+                failure(error)
+            })
+        }
+    }
+    
+    public func resetUser() {
         BasePresenter().removeUserId()
     }
 }
