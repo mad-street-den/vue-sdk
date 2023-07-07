@@ -1,6 +1,20 @@
 import Foundation
 
-public class MSD{
+public class MSD {
+    private init(){}
+    
+    @discardableResult
+    public static func initialize(token: String, baseUrl: String) -> MSDInstance {
+        return MSDInstance.initialize(token: token, baseUrl: baseUrl)
+    }
+    
+    public static func mainInstance() -> MSDInstance {
+        return MSDInstance.mainInstance()
+    }
+}
+
+public class MSDInstance{
+    private static var shared: MSDInstance?
     var eventPresenter: EventPresenter!
     var recommendationPresenter: RecommendationPresenter!
     public var isLoggingEnabled: Bool{
@@ -18,12 +32,21 @@ public class MSD{
         eventPresenter.discoverEvents()
     }
     
-    public static func initialize(token: String, baseUrl: String) -> MSD {
+    static func initialize(token: String, baseUrl: String) -> MSDInstance {
         let _ = DataValidator.validateClientToken(token)
         AppManager.shared.apiToken = token
         let _ = DataValidator.validateClientbaseUrl(baseUrl)
         AppManager.shared.msdBaseUrl = baseUrl
-        return MSD()
+        self.shared = MSDInstance()
+        return self.shared!
+    }
+    
+    static func mainInstance() -> MSDInstance {
+        guard let instance = shared else {
+            SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_GENERIC, INITIALIZE_ERROR,isForceLog: true)
+            return MSDInstance.initialize(token: "", baseUrl: "")
+            }
+            return instance
     }
     
     public func setUser(userId: String) {
