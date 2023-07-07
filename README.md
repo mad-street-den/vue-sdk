@@ -14,7 +14,7 @@
   - [Track Event](#4-track-event)
   - [Get Recommendations](#5-get-recommendations)
   - [Set User](#6-set-user)
-  - [Reset User Profile](#7-reset-user-profile)
+  - [Reset User](#7-reset-user)
   - [MSD debugging and logging](#8-msd-debugging-and-logging)
   - [Complete Code Example](#complete-code-example)
 - [I want to know more!](#i-want-to-know-more)
@@ -50,22 +50,17 @@ import msd_sdk
 func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     ...
-    let msdClient = MSD.initialize(
-    token: "YOUR_TOKEN",
-    baseUrl: "GIVEN_MSD_BASE_URL"
-    )
+    MSD.initialize(token: "YOUR_TOKEN",baseUrl: "GIVEN_MSD_BASE_URL")
     ...
 }
 ```
-
-Maintain this `msdClient` as a singleton object so that it can be used to call other sdk functions.
 
 ## 3. Discover Events
 
 To ensure accurate and comprehensive event tracking, it is recommended to call the `discoverEvents` function before invoking the track function in your SDK integration. The `discoverEvents` function retrieves the essential information related to track events, such as event names, properties, and default properties. This step allows you to populate the necessary data and configure the event tracking accordingly.
 
 ```swift
-msdClient.discoverEvents(success: { (response) in
+MSD.mainInstance().discoverEvents(success: { (response) in
             //Handle success
         }, failure: { error in
             //Handle failure
@@ -79,7 +74,7 @@ To track custom events using our SDK, you can utilize the `track` function. This
 Here's an example of how to use the track function:
 
 ```swift
-msdClient.track(
+MSD.mainInstance().track(
     eventName: "YOUR_CUSTOM_EVENT_NAME",
     Properties: ["YOUR_KEY" : "YOUR_VALUE"],
     correlationID: "UNIQUE_CORRRELATION_ID"
@@ -110,7 +105,7 @@ The getRecommendation functions in the SDK allows you to retrieve recommendation
 ### 1. Get Recommendations by Page
 
 ```swift
- msdClient.getRecommendationsByPage(
+ MSD.mainInstance().getRecommendationsByPage(
     pageReference: "YOUR_PAGE_NAME",
     properties: RecommendationRequest(
         catalogs: [:]
@@ -129,7 +124,7 @@ The getRecommendation functions in the SDK allows you to retrieve recommendation
 ### 2. Get Recommendations by Module
 
 ```swift
- msdClient.getRecommendationsByModule(
+ MSD.mainInstance().getRecommendationsByModule(
     moduleReference: "YOUR_MODULE_NAME",
     properties: RecommendationRequest(
         catalogs: [:]
@@ -148,7 +143,7 @@ The getRecommendation functions in the SDK allows you to retrieve recommendation
 ### 3. Get Recommendations by Strategy
 
 ```swift
-msdClient.getRecommendationsByStrategy(
+MSD.mainInstance().getRecommendationsByStrategy(
     strategyReference: "YOUR_STRATEGY_NAME",
     properties: RecommendationRequest(
         catalogs: [:]
@@ -186,15 +181,15 @@ The SDK automatically includes several properties when tracking events, eliminat
 The `setUser` function in the SDK allows you to associate a user ID with subsequent API calls after the user has logged in. This user ID is used to track user-specific events and behaviors, providing personalized experiences and accurate analytics.
 
 ```swift
- msdClient.setUser(userId: "YOUR_USER_ID")
+ MSD.mainInstance().setUser(userId: "YOUR_USER_ID")
 ```
 
-## 7. Reset User Profile
+## 7. Reset User
 
-The `resetUserProfile` function in the SDK allows you to clear the user information and reset the SDK state when the user logs out of your application. This ensures that any user-specific data and tracking are cleared and no longer associated with the user.
+The `resetUser` function in the SDK allows you to clear the user information and reset the SDK state when the user logs out of your application. This ensures that any user-specific data and tracking are cleared and no longer associated with the user.
 
 ```swift
- msdClient.resetUserProfile()
+ MSD.mainInstance().resetUser()
 ```
 
 ## 8. MSD debugging and logging
@@ -204,7 +199,7 @@ The SDK provides internal logging capabilities for debugging purposes. By defaul
 To enable internal logging, set `isLoggingEnabled` to `true`:
 
 ```swift
-msdClient.isLoggingEnabled = true
+MSD.mainInstance().isLoggingEnabled = true
 ```
 
 ## Complete Code Example
@@ -218,17 +213,14 @@ func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     ...
 
-    let msdClient =  MSD.initialize(
- 	token: "YOUR_TOKEN",
- 	baseUrl: "https://api.msd.com"
-    );
+    MSD.initialize(token: "YOUR_TOKEN",baseUrl: "https://api.msd.com");
 
-    msdClient.track(
+    MSD.mainInstance().track(
  	eventName: "YOUR_CUSTOM_EVENT_NAME",
  	Properties: ["YOUR_KEY" : "YOUR_VALUE"]
     );
 
-    msdClient.getRecommendationsByPage(
+    MSD.mainInstance().getRecommendationsByPage(
         pageReference: "YOUR_PAGE_NAME",
         properties: RecommendationRequest(
             catalogs: [:]
