@@ -6,9 +6,9 @@ class SDKLogger {
     
     private init() {}
     
-    func logSDKInfo(_ tag: String, _ message: String,isForceLog : Bool = false) {
+    func logSDKInfo(_ tag: String?, _ message: String,isForceLog : Bool = false) {
         if (isLoggingEnabled || isForceLog){
-            print(tag,message)
+            print(tag ?? "",message)
         }
     }
 }

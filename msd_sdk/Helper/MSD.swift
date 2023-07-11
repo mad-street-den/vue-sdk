@@ -43,10 +43,10 @@ public class MSDInstance{
     
     static func mainInstance() -> MSDInstance {
         guard let instance = shared else {
-            SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_GENERIC, INITIALIZE_ERROR,isForceLog: true)
+            SDKLogger.shared.logSDKInfo(LOG_INFO_TAG_GENERIC, "ERROR: \(MSDError.initializeError)", isForceLog: true)
             return MSDInstance.initialize(token: "", baseUrl: "")
-            }
-            return instance
+        }
+        return instance
     }
     
     public func setUser(userId: String) {

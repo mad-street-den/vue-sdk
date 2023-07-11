@@ -106,46 +106,47 @@ class ApiClient: HTTPClient {
     }
     
     func printAPIRequestResponse(urlRequest: URLRequest, responseData: Data?, response: URLResponse?, error: Error?) {
+        let logger = SDKLogger.shared
         // Print API request details
+        logger.logSDKInfo(nil, "\n------Request------")
         if let url = urlRequest.url {
-            print("URL: \(url)")
+            logger.logSDKInfo(nil, "URL: \(url)")
         }
         
         if let method = urlRequest.httpMethod {
-            print("HTTP Method: \(method)")
+            logger.logSDKInfo(nil, "HTTP Method: \(method)")
         }
         
         if let headers = urlRequest.allHTTPHeaderFields {
-            print("Headers:")
+            logger.logSDKInfo(nil, "Headers:")
             for (key, value) in headers {
-                print("\(key): \(value)")
+                logger.logSDKInfo(nil, "\(key): \(value)")
             }
         }
         
         if let bodyData = urlRequest.httpBody, let bodyString = String(data: bodyData, encoding: .utf8) {
-            print("Body:")
-            print(bodyString)
+            logger.logSDKInfo(nil, "Body: \(bodyString)")
         }
         
         // Print API response details
+        logger.logSDKInfo(nil, "\n------Response------")
         if let httpResponse = response as? HTTPURLResponse {
-            print("Response Status Code: \(httpResponse.statusCode)")
+            logger.logSDKInfo(nil, "Response Status Code: \(httpResponse.statusCode)")
             
             if let responseHeaders = httpResponse.allHeaderFields as? [String: Any] {
-                print("Response Headers:")
+                logger.logSDKInfo(nil, "Response Headers:")
                 for (key, value) in responseHeaders {
-                    print("\(key): \(value)")
+                    logger.logSDKInfo(nil, "\(key): \(value)")
                 }
             }
         }
         
         if let responseData = responseData, let responseString = String(data: responseData, encoding: .utf8) {
-            print("Response Body:")
-            print(responseString)
+            logger.logSDKInfo(nil, "Response Body: \(responseString)\n")
         }
         
         if let error = error {
-            print("Error: \(error)")
+            logger.logSDKInfo(nil, "Error: \(error)\n")
         }
     }
 }

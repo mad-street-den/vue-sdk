@@ -1,6 +1,6 @@
 import Foundation
 
-let INITIALIZE_ERROR = ": MSD must be initialized before accessing the main instance."
+let INITIALIZE_ERROR = "MSD must be initialized before accessing the main instance."
 let EMPTY_TOKEN = "The token provided is empty"
 let EMPTY_EVENT_NAME = "The event name is empty"
 let MISSING_EVENT_DATA = "Missing event data"
