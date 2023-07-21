@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: vue-sdk-ios/Network/Base/HTTPClient.swift at 2023-07-20 17:56:22 +0000
+// MARK: - Mocks generated from file: vue-sdk-ios/Network/Base/HTTPClient.swift at 2023-07-21 07:32:36 +0000
 
 
 import Cuckoo
@@ -297,7 +297,7 @@ import Foundation
 
 
 
-// MARK: - Mocks generated from file: vue-sdk-ios/Network/Services/MSDService.swift at 2023-07-20 17:56:22 +0000
+// MARK: - Mocks generated from file: vue-sdk-ios/Network/Services/VueSDKService.swift at 2023-07-21 07:32:36 +0000
 
 
 import Cuckoo

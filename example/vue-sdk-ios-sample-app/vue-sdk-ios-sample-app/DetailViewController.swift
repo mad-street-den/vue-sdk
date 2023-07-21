@@ -3,7 +3,7 @@ import UIKit
 import vue_sdk_ios
 
 class DetailViewController:UIViewController{
-    var msd: VueSDKInstance!
+    var sdkInstance: VueSDKInstance!
     @IBOutlet var userIdTextField: UITextField!
     var detailViewCorrelationID: String!
     
@@ -11,22 +11,22 @@ class DetailViewController:UIViewController{
         super.viewDidLoad()
         detailViewCorrelationID = "detailViewCorrelationID"
         userIdTextField.delegate = self
-         msd = VueSDK.mainInstance()
+        sdkInstance = VueSDK.mainInstance()
     }
     
     @IBAction func onTapSetUserId(_ sender: Any) {
         if let userId = userIdTextField.text,  userId != "" {
-            msd.setUser(userId: userId)
+            sdkInstance.setUser(userId: userId)
         }
         userIdTextField.resignFirstResponder()
     }
     
     @IBAction func onTapResetUserProfile(_ sender: Any) {
-        msd.resetUser()
+        sdkInstance.resetUser()
     }
     
     @IBAction func onTapDiscover(_ sender: Any) {
-        msd.discoverEvents(success: { (response) in
+        sdkInstance.discoverEvents(success: { (response) in
             print(response.data)
         }, failure: { error in
             print(error)
@@ -38,7 +38,7 @@ class DetailViewController:UIViewController{
                           "page_name": "PDP",
                           "product_id": "39596296700022"
                          ]
-        msd.track(eventName: "PageView", properties: properties,
+        sdkInstance.track(eventName: "PageView", properties: properties,
                   correlationId: detailViewCorrelationID)
     }
     
@@ -46,7 +46,7 @@ class DetailViewController:UIViewController{
         let properties = ["page_type":"Home",
                           "page_name": "Home",
                          ]
-        msd.track(eventName: "PageView", properties: properties,
+        sdkInstance.track(eventName: "PageView", properties: properties,
                   correlationId: detailViewCorrelationID)
     }
     
@@ -58,7 +58,7 @@ class DetailViewController:UIViewController{
                           "order_id": "AE75634",
                           "quantity": [1],
                           "price": ["125.10"]] as [String : Any]
-        msd.track(eventName: "Buy", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "Buy", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapModuleView(_ sender: Any) {
@@ -67,7 +67,7 @@ class DetailViewController:UIViewController{
                           "product_id": "5789256482843",
                           "slot_id": "android_slot2",
                           "module_id": "a5777370-b133-426a-ae3a-5a883a787130"]
-        msd.track(eventName: "ModuleView", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "ModuleView", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapModuleClick(_ sender: Any) {
@@ -79,14 +79,14 @@ class DetailViewController:UIViewController{
                           "slot_id": "android_slot2",
                           "module_id": "a5777370-b133-426a-ae3a-5a883a787130",
                           "strategy_id": "04092a30-22e2-4565-83ee-3ffd83cb6375"] as [String : Any]
-        msd.track(eventName: "ModuleClick", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "ModuleClick", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapPlaceOrder(_ sender: Any) {
         let properties = ["page_type": "pdp",
                           "page_name": "PDP",
                           "product_id": "5789256482843"]
-        msd.track(eventName: "placeOrder", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "placeOrder", properties: properties, correlationId: detailViewCorrelationID)
     }
     
 //    @IBAction func goToChekoutPage(_ sender: Any) {
@@ -101,7 +101,7 @@ class DetailViewController:UIViewController{
                           "page_name": "PDP",
                           "product_id": "5789256482843",
                           "clicked_product_id": "39946630725750"]
-        msd.track(eventName: "Add2cart", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "Add2cart", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapRemoveFromCart(_ sender: Any) {
@@ -109,7 +109,7 @@ class DetailViewController:UIViewController{
                           "page_name": "PDP",
                           "product_id": "5789256482843",
                           "clicked_product_id": "39946630725750"]
-        msd.track(eventName: "Removefromcart", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "Removefromcart", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapLeftSwipe(_ sender: Any) {
@@ -118,7 +118,7 @@ class DetailViewController:UIViewController{
                           "product_id": "5789256482843",
                           "slot_id": "android_slot2",
                           "module_id": "a5777370-b133-426a-ae3a-5a883a787130"]
-        msd.track(eventName: "leftSwipe", properties: properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "leftSwipe", properties: properties, correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapRightSwipe(_ sender: Any) {
@@ -127,7 +127,7 @@ class DetailViewController:UIViewController{
                           "product_id": "5789256482843",
                           "slot_id": "android_slot2",
                           "module_id": "a5777370-b133-426a-ae3a-5a883a787130"]
-        msd.track(eventName: "rightSwipe", properties:properties, correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "rightSwipe", properties:properties, correlationId: detailViewCorrelationID)
     }
     
 }

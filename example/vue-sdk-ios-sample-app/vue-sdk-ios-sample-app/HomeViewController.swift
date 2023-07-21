@@ -2,7 +2,7 @@ import UIKit
 import vue_sdk_ios
 
 class HomeViewController: UIViewController {
-    var msdObject: VueSDKInstance!
+    var sdkInstance: VueSDKInstance!
     var products: [Product] = []
     @IBOutlet var searchTableView: UITableView!
     let loadingIndicator = UIActivityIndicatorView(style: .large)
@@ -10,7 +10,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        msdObject = VueSDK.mainInstance()
+        sdkInstance = VueSDK.mainInstance()
         searchTableView.delegate = self
         searchTableView.dataSource = self
         homeViewCorrelationID = "1746e114-9ab3-4924-9899-0f9ccde465e6"
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
                 ]
             ]
         ]
-        msdObject.getRecommendationsByPage(
+        sdkInstance.getRecommendationsByPage(
             pageReference: "PDP",
             properties: RecommendationRequest(
                 catalogs: catalogs
@@ -78,7 +78,7 @@ class HomeViewController: UIViewController {
                 ]
             ]
         ]
-        msdObject.getRecommendationsByModule(
+        sdkInstance.getRecommendationsByModule(
             moduleReference: "Similar Products Module - 27 June",
             properties: RecommendationRequest(
                 catalogs: catalogs,
@@ -117,7 +117,7 @@ class HomeViewController: UIViewController {
                 ]
             ]
         ]
-        msdObject.getRecommendationsByStrategy(
+        sdkInstance.getRecommendationsByStrategy(
             strategyReference:  "Similar Products - 27June",
             properties: RecommendationRequest(
                 catalogs: catalogs
