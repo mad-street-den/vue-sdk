@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A4C6F52A6A6062001A62B0 /* vue_sdk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A4C6F22A6A605B001A62B0 /* vue_sdk_ios.framework */; };
+		26A4C6F62A6A6062001A62B0 /* vue_sdk_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26A4C6F22A6A605B001A62B0 /* vue_sdk_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26FB65652A37200A00314FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB65642A37200A00314FB1 /* AppDelegate.swift */; };
+		26FB65672A37200A00314FB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB65662A37200A00314FB1 /* SceneDelegate.swift */; };
+		26FB65692A37200A00314FB1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FB65682A37200A00314FB1 /* HomeViewController.swift */; };
+		26FB656C2A37200A00314FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26FB656A2A37200A00314FB1 /* Main.storyboard */; };
+		26FB656E2A37200C00314FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FB656D2A37200C00314FB1 /* Assets.xcassets */; };
+		26FB65712A37200C00314FB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26FB656F2A37200C00314FB1 /* LaunchScreen.storyboard */; };
+		F95D02942A3726FA00D56FC2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D02932A3726FA00D56FC2 /* LoginViewController.swift */; };
+		F9978F062A37329B00AF956B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9978F052A37329B00AF956B /* DetailViewController.swift */; };
+		F9978F082A3732DB00AF956B /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9978F072A3732DB00AF956B /* CheckoutViewController.swift */; };
+		F9978F0A2A373F8400AF956B /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9978F092A373F8400AF956B /* BorderedButton.swift */; };
+		F9978F372A39A79200AF956B /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9978F362A39A79200AF956B /* customTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26A4C6F12A6A605B001A62B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A4C6EC2A6A605B001A62B0 /* vue-sdk-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26C11F382A1B944500830210;
+			remoteInfo = "vue-sdk-ios";
+		};
+		26A4C6F32A6A605B001A62B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A4C6EC2A6A605B001A62B0 /* vue-sdk-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26C11F422A1B944600830210;
+			remoteInfo = "vue-sdk-iosTests";
+		};
+		26FD689F2A389E2E0092CC8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FD689A2A389E2E0092CC8A /* msd_sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26C11F382A1B944500830210;
+			remoteInfo = msd_sdk;
+		};
+		26FD68A12A389E2E0092CC8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FD689A2A389E2E0092CC8A /* msd_sdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 26C11F422A1B944600830210;
+			remoteInfo = msd_sdkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F9978EDC2A372BB900AF956B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26A4C6F62A6A6062001A62B0 /* vue_sdk_ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		26A4C6EC2A6A605B001A62B0 /* vue-sdk-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "vue-sdk-ios.xcodeproj"; path = "../../vue-sdk-ios.xcodeproj"; sourceTree = "<group>"; };
+		26FB65612A37200A00314FB1 /* vue-sdk-ios-sample-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vue-sdk-ios-sample-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FB65642A37200A00314FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26FB65662A37200A00314FB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		26FB65682A37200A00314FB1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		26FB656B2A37200A00314FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26FB656D2A37200C00314FB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26FB65702A37200C00314FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26FB65722A37200C00314FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26FD689A2A389E2E0092CC8A /* msd_sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = msd_sdk.xcodeproj; path = ../../msd_sdk/msd_sdk.xcodeproj; sourceTree = "<group>"; };
+		F95D02932A3726FA00D56FC2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F9978F052A37329B00AF956B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F9978F072A3732DB00AF956B /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		F9978F092A373F8400AF956B /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		F9978F362A39A79200AF956B /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26FB655E2A37200A00314FB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A4C6F52A6A6062001A62B0 /* vue_sdk_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A4C6EB2A6A605B001A62B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26A4C6EC2A6A605B001A62B0 /* vue-sdk-ios.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26A4C6ED2A6A605B001A62B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26A4C6F22A6A605B001A62B0 /* vue_sdk_ios.framework */,
+				26A4C6F42A6A605B001A62B0 /* vue-sdk-iosTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26FB65582A37200A00314FB1 = {
+			isa = PBXGroup;
+			children = (
+				26FB65632A37200A00314FB1 /* vue-sdk-ios-sample-app */,
+				26FB65622A37200A00314FB1 /* Products */,
+				26A4C6EB2A6A605B001A62B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26FB65622A37200A00314FB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26FB65612A37200A00314FB1 /* vue-sdk-ios-sample-app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26FB65632A37200A00314FB1 /* vue-sdk-ios-sample-app */ = {
+			isa = PBXGroup;
+			children = (
+				26FB65642A37200A00314FB1 /* AppDelegate.swift */,
+				26FB65662A37200A00314FB1 /* SceneDelegate.swift */,
+				F95D02932A3726FA00D56FC2 /* LoginViewController.swift */,
+				26FB65682A37200A00314FB1 /* HomeViewController.swift */,
+				F9978F072A3732DB00AF956B /* CheckoutViewController.swift */,
+				F9978F052A37329B00AF956B /* DetailViewController.swift */,
+				F9978F092A373F8400AF956B /* BorderedButton.swift */,
+				26FB656A2A37200A00314FB1 /* Main.storyboard */,
+				26FB656D2A37200C00314FB1 /* Assets.xcassets */,
+				26FB656F2A37200C00314FB1 /* LaunchScreen.storyboard */,
+				26FB65722A37200C00314FB1 /* Info.plist */,
+				F9978F362A39A79200AF956B /* customTableViewCell.swift */,
+			);
+			path = "vue-sdk-ios-sample-app";
+			sourceTree = "<group>";
+		};
+		26FD689B2A389E2E0092CC8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26FD68A02A389E2E0092CC8A /* msd_sdk.framework */,
+				26FD68A22A389E2E0092CC8A /* msd_sdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26FB65602A37200A00314FB1 /* vue-sdk-ios-sample-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FB65752A37200C00314FB1 /* Build configuration list for PBXNativeTarget "vue-sdk-ios-sample-app" */;
+			buildPhases = (
+				26FB655D2A37200A00314FB1 /* Sources */,
+				26FB655E2A37200A00314FB1 /* Frameworks */,
+				26FB655F2A37200A00314FB1 /* Resources */,
+				F9978EDC2A372BB900AF956B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "vue-sdk-ios-sample-app";
+			productName = "msd-sdk-ios-sample-app";
+			productReference = 26FB65612A37200A00314FB1 /* vue-sdk-ios-sample-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26FB65592A37200A00314FB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					26FB65602A37200A00314FB1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 26FB655C2A37200A00314FB1 /* Build configuration list for PBXProject "vue-sdk-ios-sample-app" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26FB65582A37200A00314FB1;
+			productRefGroup = 26FB65622A37200A00314FB1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 26FD689B2A389E2E0092CC8A /* Products */;
+					ProjectRef = 26FD689A2A389E2E0092CC8A /* msd_sdk.xcodeproj */;
+				},
+				{
+					ProductGroup = 26A4C6ED2A6A605B001A62B0 /* Products */;
+					ProjectRef = 26A4C6EC2A6A605B001A62B0 /* vue-sdk-ios.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				26FB65602A37200A00314FB1 /* vue-sdk-ios-sample-app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		26A4C6F22A6A605B001A62B0 /* vue_sdk_ios.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = vue_sdk_ios.framework;
+			remoteRef = 26A4C6F12A6A605B001A62B0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		26A4C6F42A6A605B001A62B0 /* vue-sdk-iosTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "vue-sdk-iosTests.xctest";
+			remoteRef = 26A4C6F32A6A605B001A62B0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		26FD68A02A389E2E0092CC8A /* msd_sdk.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = msd_sdk.framework;
+			remoteRef = 26FD689F2A389E2E0092CC8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		26FD68A22A389E2E0092CC8A /* msd_sdkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = msd_sdkTests.xctest;
+			remoteRef = 26FD68A12A389E2E0092CC8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26FB655F2A37200A00314FB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FB65712A37200C00314FB1 /* LaunchScreen.storyboard in Resources */,
+				26FB656E2A37200C00314FB1 /* Assets.xcassets in Resources */,
+				26FB656C2A37200A00314FB1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26FB655D2A37200A00314FB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F95D02942A3726FA00D56FC2 /* LoginViewController.swift in Sources */,
+				26FB65692A37200A00314FB1 /* HomeViewController.swift in Sources */,
+				F9978F062A37329B00AF956B /* DetailViewController.swift in Sources */,
+				26FB65652A37200A00314FB1 /* AppDelegate.swift in Sources */,
+				F9978F082A3732DB00AF956B /* CheckoutViewController.swift in Sources */,
+				26FB65672A37200A00314FB1 /* SceneDelegate.swift in Sources */,
+				F9978F0A2A373F8400AF956B /* BorderedButton.swift in Sources */,
+				F9978F372A39A79200AF956B /* customTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		26FB656A2A37200A00314FB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26FB656B2A37200A00314FB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26FB656F2A37200C00314FB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26FB65702A37200C00314FB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26FB65732A37200C00314FB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26FB65742A37200C00314FB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26FB65762A37200C00314FB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZKHPMC9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "vue-sdk-ios-sample-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msd.vuesampleapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26FB65772A37200C00314FB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HZKHPMC9NL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "vue-sdk-ios-sample-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.msd.vuesampleapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FB655C2A37200A00314FB1 /* Build configuration list for PBXProject "vue-sdk-ios-sample-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FB65732A37200C00314FB1 /* Debug */,
+				26FB65742A37200C00314FB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FB65752A37200C00314FB1 /* Build configuration list for PBXNativeTarget "vue-sdk-ios-sample-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FB65762A37200C00314FB1 /* Debug */,
+				26FB65772A37200C00314FB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26FB65592A37200A00314FB1 /* Project object */;
+}

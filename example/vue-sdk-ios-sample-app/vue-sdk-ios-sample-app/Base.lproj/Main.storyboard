@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9qp-SM-KjI">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="LgL-Uk-eVV">
+            <objects>
+                <viewController id="1TI-RC-oiZ" customClass="LoginViewController" customModule="msd_sdk_ios_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vbV-tV-RLq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDK Setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9A-mZ-sAb">
+                                <rect key="frame" x="130" y="148" width="133.33333333333337" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nd8-1U-JMR">
+                                <rect key="frame" x="150.33333333333334" y="738.66666666666663" width="92.666666666666657" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Continue"/>
+                                <connections>
+                                    <action selector="onContinueButtonTap:" destination="1TI-RC-oiZ" eventType="touchUpInside" id="AsM-Ei-iNA"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1xx-Pz-P6T">
+                                <rect key="frame" x="20" y="345" width="353" height="162"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="API Token" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-OW-ogR">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Base URL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QlJ-eA-uAL">
+                                        <rect key="frame" x="0.0" y="64" width="353" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User ID (optional)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMJ-OE-fDu">
+                                        <rect key="frame" x="0.0" y="128" width="353" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7jP-Pm-PoV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o9A-mZ-sAb" firstAttribute="top" secondItem="7jP-Pm-PoV" secondAttribute="top" constant="45" id="7Fo-PB-8fL"/>
+                            <constraint firstItem="nd8-1U-JMR" firstAttribute="centerX" secondItem="vbV-tV-RLq" secondAttribute="centerX" id="Gyt-Yj-ZY9"/>
+                            <constraint firstItem="1xx-Pz-P6T" firstAttribute="centerX" secondItem="vbV-tV-RLq" secondAttribute="centerX" id="QM9-it-XJz"/>
+                            <constraint firstItem="1xx-Pz-P6T" firstAttribute="leading" secondItem="7jP-Pm-PoV" secondAttribute="leading" constant="20" id="TeK-r0-VKg"/>
+                            <constraint firstItem="7jP-Pm-PoV" firstAttribute="trailing" secondItem="1xx-Pz-P6T" secondAttribute="trailing" constant="20" id="b1V-r9-33D"/>
+                            <constraint firstItem="1xx-Pz-P6T" firstAttribute="centerY" secondItem="vbV-tV-RLq" secondAttribute="centerY" id="fCb-LY-Ohz"/>
+                            <constraint firstItem="o9A-mZ-sAb" firstAttribute="centerX" secondItem="vbV-tV-RLq" secondAttribute="centerX" id="lnL-ut-OOp"/>
+                            <constraint firstItem="7jP-Pm-PoV" firstAttribute="bottom" secondItem="nd8-1U-JMR" secondAttribute="bottom" constant="45" id="ogb-pY-7rg"/>
+                            <constraint firstItem="nd8-1U-JMR" firstAttribute="centerX" secondItem="vbV-tV-RLq" secondAttribute="centerX" id="qNa-37-sTt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dAe-Qk-U51"/>
+                    <connections>
+                        <outlet property="apiTokenTextField" destination="Sgk-OW-ogR" id="vpX-08-x47"/>
+                        <outlet property="baseURLTextField" destination="QlJ-eA-uAL" id="2yh-3O-Hy0"/>
+                        <outlet property="userIDTextField" destination="IMJ-OE-fDu" id="wZe-Au-h2L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gR-tL-v7c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3121" y="-92"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ihi-HI-T2I">
+            <objects>
+                <navigationController id="9qp-SM-KjI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dg8-d6-sxZ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1TI-RC-oiZ" kind="relationship" relationship="rootViewController" id="LE2-UZ-NNY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1Q-v1-ewn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4521" y="-449"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="homeVcIdentifier" id="BYZ-38-t0r" customClass="HomeViewController" customModule="msd_sdk_ios_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQO-xS-LOl">
+                                <rect key="frame" x="10" y="69" width="373" height="699"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="pfY-XE-WwG">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="344.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----Search Recommendations------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-mk-Hhm">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="79.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiX-wG-fSZ" userLabel="SearchByPage" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="88.333333333333343" width="373" height="79.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Search By Page"/>
+                                                <connections>
+                                                    <action selector="onSearchByPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BOE-RQ-rKL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-af-aC3" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="176.66666666666666" width="373" height="79.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Search By Module"/>
+                                                <connections>
+                                                    <action selector="onSearchByModule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xyQ-iu-H3x"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-bD-Uoq" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="265" width="373" height="79.666666666666686"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Search By Strategy"/>
+                                                <connections>
+                                                    <action selector="onSearchByStrategy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rCn-8n-GHK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aCo-QG-E3c">
+                                        <rect key="frame" x="0.0" y="354.66666666666674" width="373" height="344.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="TSl-o7-aXX" customClass="CustomViewCell" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="373" height="128.33332824707031"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TSl-o7-aXX" id="9As-wA-93a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="128.33332824707031"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kAb-3e-L9s">
+                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="128.33333333333334"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3l-Z6-Uxh">
+                                                                    <rect key="frame" x="0.0" y="54.000000000000007" width="133" height="20.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOj-jV-i6U">
+                                                                    <rect key="frame" x="133" y="0.3333333333333286" width="240" height="127.99999999999999"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="kAb-3e-L9s" secondAttribute="bottom" id="4L6-3I-zHm"/>
+                                                        <constraint firstItem="kAb-3e-L9s" firstAttribute="top" secondItem="9As-wA-93a" secondAttribute="top" id="6Wv-aj-9Gf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kAb-3e-L9s" secondAttribute="trailing" id="76E-vH-xQc"/>
+                                                        <constraint firstItem="kAb-3e-L9s" firstAttribute="leading" secondItem="9As-wA-93a" secondAttribute="leading" id="Awq-4D-hux"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageCell" destination="JOj-jV-i6U" id="UQD-g3-taB"/>
+                                                    <outlet property="title" destination="G3l-Z6-Uxh" id="nUa-BF-lXg"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZY-H2-erG">
+                                <rect key="frame" x="122.66666666666667" y="778" width="147.66666666666663" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="-&gt; DETAIL PAGE"/>
+                                <connections>
+                                    <action selector="goToDetailPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9DO-2U-vHQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KQO-xS-LOl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="OTG-7g-Hew"/>
+                            <constraint firstItem="SZY-H2-erG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P10-Ue-KEC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KQO-xS-LOl" secondAttribute="trailing" constant="10" id="WWJ-wy-8SA"/>
+                            <constraint firstItem="SZY-H2-erG" firstAttribute="top" secondItem="KQO-xS-LOl" secondAttribute="bottom" constant="10" id="b8W-uI-RAE"/>
+                            <constraint firstItem="KQO-xS-LOl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="uj4-F1-WDU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KQO-xS-LOl" secondAttribute="bottom" constant="50" id="weU-Jf-yqE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cn9-60-Kl6"/>
+                    <connections>
+                        <outlet property="searchTableView" destination="aCo-QG-E3c" id="d28-wq-Ioh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1854" y="-92"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="d8Z-b6-rsB">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="76F-Za-dqc" customClass="DetailViewController" customModule="msd_sdk_ios_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8rv-ZG-rmD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="ehW-Qz-jOI">
+                                <rect key="frame" x="18" y="159.66666666666663" width="357.33333333333331" height="532.99999999999989"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Muh-8T-Oev">
+                                        <rect key="frame" x="0.0" y="0.0" width="357.33333333333331" height="132.66666666666666"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sqK-f1-76Z">
+                                                <rect key="frame" x="0.0" y="0.0" width="357.33333333333331" height="34"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5m-50-U54" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="49" width="357.33333333333331" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="SET USER ID"/>
+                                                <connections>
+                                                    <action selector="onTapSetUserId:" destination="76F-Za-dqc" eventType="touchUpInside" id="Hhh-Ih-PYC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-FE-xIt" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="98.333333333333343" width="357.33333333333331" height="34.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Reset User Profile"/>
+                                                <connections>
+                                                    <action selector="onTapResetUserProfile:" destination="76F-Za-dqc" eventType="touchUpInside" id="LyE-Cr-dqK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rVm-Sm-P2X">
+                                        <rect key="frame" x="0.0" y="232.66666666666666" width="357.33333333333331" height="300.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqL-Gg-TsI" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="357.33333333333331" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Discover API"/>
+                                                <connections>
+                                                    <action selector="onTapDiscover:" destination="76F-Za-dqc" eventType="touchUpInside" id="w38-Sg-bDY"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----    Events     ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXP-uK-EAF">
+                                                <rect key="frame" x="0.0" y="44.333333333333371" width="357.33333333333331" height="34.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="C8T-KN-Rwe">
+                                                <rect key="frame" x="0.0" y="88.666666666666686" width="357.33333333333331" height="34.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eV-Ve-OaC" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="PageView"/>
+                                                        <connections>
+                                                            <action selector="onTapPageView:" destination="76F-Za-dqc" eventType="touchUpInside" id="MRf-2b-ihZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFI-Zo-2nz" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="188.66666666666669" y="0.0" width="168.66666666666669" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="PageViewForHome"/>
+                                                        <connections>
+                                                            <action selector="onTapPageViewForHome:" destination="76F-Za-dqc" eventType="touchUpInside" id="Ivc-Gu-IK8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R4O-dn-Ix1">
+                                                <rect key="frame" x="0.0" y="133.00000000000006" width="357.33333333333331" height="34.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I3-ka-qa9" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="ModuleView"/>
+                                                        <connections>
+                                                            <action selector="onTapModuleView:" destination="76F-Za-dqc" eventType="touchUpInside" id="oEg-uF-RiG"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKy-Zb-1DW" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="188.66666666666669" y="0.0" width="168.66666666666669" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="ModuleClick"/>
+                                                        <connections>
+                                                            <action selector="onTapModuleClick:" destination="76F-Za-dqc" eventType="touchUpInside" id="hwE-pg-bKM"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ANX-ok-hRz">
+                                                <rect key="frame" x="0.0" y="177.33333333333331" width="357.33333333333331" height="34.333333333333343"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFn-EX-cjJ" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="placeOrder"/>
+                                                        <connections>
+                                                            <action selector="onTapPlaceOrder:" destination="76F-Za-dqc" eventType="touchUpInside" id="1fC-aT-JgO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8b-3i-b1j" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="188.66666666666669" y="0.0" width="168.66666666666669" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Buy"/>
+                                                        <connections>
+                                                            <action selector="onTapBuy:" destination="76F-Za-dqc" eventType="touchUpInside" id="hMI-Yf-8dO"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="clr-iq-xfJ">
+                                                <rect key="frame" x="0.0" y="221.66666666666669" width="357.33333333333331" height="34.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8z-C4-FD7" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="addToCart"/>
+                                                        <connections>
+                                                            <action selector="onTapAddToCart:" destination="76F-Za-dqc" eventType="touchUpInside" id="Ibg-5Z-2qn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Boh-ek-sji" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="188.66666666666669" y="0.0" width="168.66666666666669" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="removeFromCart"/>
+                                                        <connections>
+                                                            <action selector="onTapRemoveFromCart:" destination="76F-Za-dqc" eventType="touchUpInside" id="907-7R-YJb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="F25-le-Nzd">
+                                                <rect key="frame" x="0.0" y="266.00000000000006" width="357.33333333333331" height="34.333333333333314"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDd-0s-e5S" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="leftSwipe"/>
+                                                        <connections>
+                                                            <action selector="onTapLeftSwipe:" destination="76F-Za-dqc" eventType="touchUpInside" id="qud-yr-hf0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYV-iL-790" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                        <rect key="frame" x="188.66666666666669" y="0.0" width="168.66666666666669" height="34.333333333333336"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="rightSwipe"/>
+                                                        <connections>
+                                                            <action selector="onTapRightSwipe:" destination="76F-Za-dqc" eventType="touchUpInside" id="1Ir-Tq-eoJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B6z-wy-UST"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ehW-Qz-jOI" firstAttribute="centerX" secondItem="8rv-ZG-rmD" secondAttribute="centerX" id="huL-Jo-5ps"/>
+                            <constraint firstItem="ehW-Qz-jOI" firstAttribute="centerY" secondItem="8rv-ZG-rmD" secondAttribute="centerY" id="kEr-Xt-5Yb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userIdTextField" destination="sqK-f1-76Z" id="Wdp-YO-Q5p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48A-Ll-ztn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912.2137404580152" y="-92.253521126760575"/>
+        </scene>
+        <!--Checkout View Controller-->
+        <scene sceneID="SpC-lG-4bh">
+            <objects>
+                <viewController storyboardIdentifier="checkoutVC" id="Srb-PZ-V0j" customClass="CheckoutViewController" customModule="msd_sdk_ios_sample_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fQv-Sn-Q7F">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="Pyg-kc-s6y">
+                                <rect key="frame" x="109.66666666666667" y="386.66666666666669" width="173.66666666666663" height="78.666666666666686"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5UZ-oO-9GY">
+                                        <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="78.666666666666671"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdE-ej-ORd" customClass="BorderedButton" customModule="msd_sdk_ios_sample_app" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="173.66666666666666" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Discover API"/>
+                                                <connections>
+                                                    <action selector="onTapDiscover:" destination="Srb-PZ-V0j" eventType="touchUpInside" id="RWk-U6-O7M"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----    Events     ------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkl-La-Bur">
+                                                <rect key="frame" x="0.0" y="44.333333333333314" width="173.66666666666666" height="34.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kSz-cr-MG1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pyg-kc-s6y" firstAttribute="centerX" secondItem="fQv-Sn-Q7F" secondAttribute="centerX" id="6wa-kb-3iN"/>
+                            <constraint firstItem="Pyg-kc-s6y" firstAttribute="centerY" secondItem="fQv-Sn-Q7F" secondAttribute="centerY" id="BV9-hj-lte"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf0-tZ-feF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="-92"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
