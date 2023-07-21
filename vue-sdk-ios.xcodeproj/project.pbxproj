@@ -22,7 +22,7 @@
 		F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DAF2A1BA2F100620A99 /* HTTPClient.swift */; };
 		F9E64DBE2A1BA2F100620A99 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB02A1BA2F100620A99 /* RequestMethod.swift */; };
 		F9E64DC02A1BA2F100620A99 /* APIRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB22A1BA2F100620A99 /* APIRequestProtocol.swift */; };
-		F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB42A1BA2F100620A99 /* MSDService.swift */; };
+		F9E64DC12A1BA2F100620A99 /* VueSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DB42A1BA2F100620A99 /* VueSDKService.swift */; };
 		F9E64DCB2A1BA6C700620A99 /* DataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */; };
 		F9E64DCD2A1BA6D200620A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCC2A1BA6D200620A99 /* Constants.swift */; };
 		F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */; };
@@ -32,7 +32,7 @@
 		F9E64DDD2A1BB06400620A99 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E64DDC2A1BB06400620A99 /* UserDefaults+Ext.swift */; };
 		F9F328932A30431F00FEC013 /* DiscoverEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F328922A30431F00FEC013 /* DiscoverEventsResponse.swift */; };
 		F9FE32B12A24C34A007E923D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE32B02A24C34A007E923D /* Utils.swift */; };
-		F9FE32B32A24CA4A007E923D /* MSDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE32B22A24CA4A007E923D /* MSDError.swift */; };
+		F9FE32B32A24CA4A007E923D /* VueSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FE32B22A24CA4A007E923D /* VueSDKError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		F9E64DAF2A1BA2F100620A99 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F9E64DB02A1BA2F100620A99 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		F9E64DB22A1BA2F100620A99 /* APIRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestProtocol.swift; sourceTree = "<group>"; };
-		F9E64DB42A1BA2F100620A99 /* MSDService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSDService.swift; sourceTree = "<group>"; };
+		F9E64DB42A1BA2F100620A99 /* VueSDKService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VueSDKService.swift; sourceTree = "<group>"; };
 		F9E64DCA2A1BA6C700620A99 /* DataValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValidator.swift; sourceTree = "<group>"; };
 		F9E64DCC2A1BA6D200620A99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F9E64DCE2A1BA77D00620A99 /* SDKLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKLogger.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		F9E64DDC2A1BB06400620A99 /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		F9F328922A30431F00FEC013 /* DiscoverEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverEventsResponse.swift; sourceTree = "<group>"; };
 		F9FE32B02A24C34A007E923D /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		F9FE32B22A24CA4A007E923D /* MSDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSDError.swift; sourceTree = "<group>"; };
+		F9FE32B22A24CA4A007E923D /* VueSDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VueSDKError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */,
-				F9FE32B22A24CA4A007E923D /* MSDError.swift */,
+				F9FE32B22A24CA4A007E923D /* VueSDKError.swift */,
 				F9F328922A30431F00FEC013 /* DiscoverEventsResponse.swift */,
 			);
 			path = Models;
@@ -215,7 +215,7 @@
 		F9E64DB32A1BA2F100620A99 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F9E64DB42A1BA2F100620A99 /* MSDService.swift */,
+				F9E64DB42A1BA2F100620A99 /* VueSDKService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */,
-				F9FE32B32A24CA4A007E923D /* MSDError.swift in Sources */,
+				F9FE32B32A24CA4A007E923D /* VueSDKError.swift in Sources */,
 				F9E64DBA2A1BA2F100620A99 /* VueSDK.swift in Sources */,
 				F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */,
 				F9E64DBB2A1BA2F100620A99 /* VueSDKEndpoint.swift in Sources */,
@@ -441,7 +441,7 @@
 				F97207602A29C58900CAA40B /* StringConstants.swift in Sources */,
 				F9E64DCF2A1BA77D00620A99 /* SDKLogger.swift in Sources */,
 				F9E64DDA2A1BAFB000620A99 /* RecommendationPresenter.swift in Sources */,
-				F9E64DC12A1BA2F100620A99 /* MSDService.swift in Sources */,
+				F9E64DC12A1BA2F100620A99 /* VueSDKService.swift in Sources */,
 				F9E64DB72A1BA2F100620A99 /* RecommenationRequest.swift in Sources */,
 				F9E64DDD2A1BB06400620A99 /* UserDefaults+Ext.swift in Sources */,
 			);
