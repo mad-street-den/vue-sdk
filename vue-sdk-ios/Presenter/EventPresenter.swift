@@ -25,7 +25,7 @@ class EventPresenter: BasePresenter {
         }
     }
     
-    func trackEvent(eventName: String, properties: [String:Any?]?, correlationId: String?) async {
+    func trackEvent(eventName: String, properties: [String:Any?]?, correlationId: String?, sdkConfig: VueSDKConfig?) async {
         if discoverReponseList == nil {
             self.discoverEvents()
         }
@@ -35,7 +35,7 @@ class EventPresenter: BasePresenter {
         
         // Fetch the default properties for the track API
         var defaultTrackEventProperties = [String:Any?]()
-        addSuperProperties(to: &defaultTrackEventProperties)
+        addSuperProperties(to: &defaultTrackEventProperties, sdkConfig: sdkConfig ?? VueSDKConfig())
         
         // Update the keys of the properties map based on the current event name
         defaultTrackEventProperties = getPropertiesForEventName(eventName, defaultKeys: defaultTrackEventProperties)

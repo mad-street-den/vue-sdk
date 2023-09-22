@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261188A22ABC427D00FC75F1 /* VueSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261188A12ABC427D00FC75F1 /* VueSDKConfig.swift */; };
+		261188A32ABC427D00FC75F1 /* VueSDKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261188A12ABC427D00FC75F1 /* VueSDKConfig.swift */; };
 		26C11F3D2A1B944500830210 /* VueSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 26C11F3C2A1B944500830210 /* VueSDK.docc */; };
 		26C11F432A1B944600830210 /* vue_sdk_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C11F382A1B944500830210 /* vue_sdk_ios.framework */; };
 		26C11F482A1B944600830210 /* VueSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C11F472A1B944600830210 /* VueSDKTests.swift */; };
@@ -47,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		026B20429C0D0873BDF9B509 /* Pods-vue-sdk-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vue-sdk-iosTests.release.xcconfig"; path = "Target Support Files/Pods-vue-sdk-iosTests/Pods-vue-sdk-iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		261188A12ABC427D00FC75F1 /* VueSDKConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VueSDKConfig.swift; sourceTree = "<group>"; };
 		26C11F382A1B944500830210 /* vue_sdk_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = vue_sdk_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C11F3B2A1B944500830210 /* VueSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VueSDK.h; sourceTree = "<group>"; };
 		26C11F3C2A1B944500830210 /* VueSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VueSDK.docc; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 				F9E64DA32A1BA2F100620A99 /* RecommenationRequest.swift */,
 				F9FE32B22A24CA4A007E923D /* VueSDKError.swift */,
 				F9F328922A30431F00FEC013 /* DiscoverEventsResponse.swift */,
+				261188A12ABC427D00FC75F1 /* VueSDKConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9E64DBC2A1BA2F100620A99 /* Reachability.swift in Sources */,
+				261188A22ABC427D00FC75F1 /* VueSDKConfig.swift in Sources */,
 				F9FE32B32A24CA4A007E923D /* VueSDKError.swift in Sources */,
 				F9E64DBA2A1BA2F100620A99 /* VueSDK.swift in Sources */,
 				F9E64DBD2A1BA2F100620A99 /* HTTPClient.swift in Sources */,
@@ -452,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C11F482A1B944600830210 /* VueSDKTests.swift in Sources */,
+				261188A32ABC427D00FC75F1 /* VueSDKConfig.swift in Sources */,
 				F90DB44A2A40031D003B318D /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
