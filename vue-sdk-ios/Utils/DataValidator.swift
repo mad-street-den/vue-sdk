@@ -44,4 +44,16 @@ class DataValidator {
         }
         return true
     }
+    
+    static func validateMadUUID(_ madUUID: String) -> String? {
+        if Utils.checkEmptyString(madUUID) {
+            SDKLogger.shared.logSDKInfo(
+                LOG_INFO_TAG_GENERIC,
+                "ERROR: \(VueSDKError.emptyMadUUID)"
+            )
+            return nil
+        }
+        return madUUID
+    }
+    
 }

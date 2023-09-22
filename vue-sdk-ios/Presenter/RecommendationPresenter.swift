@@ -7,12 +7,12 @@ class RecommendationPresenter: BasePresenter {
         self.sdkservice = sdkservice
     }
     
-    func getRecommendations(searchType: [String: String], properties: RecommendationRequest, correlationId: String?, success: @escaping([[String: Any?]]) -> Void, failure: @escaping([String: Any?]) -> Void) async {
+    func getRecommendations(searchType: [String: String], properties: RecommendationRequest, correlationId: String?, sdkConfig: VueSDKConfig?, success: @escaping([[String: Any?]]) -> Void, failure: @escaping([String: Any?]) -> Void) async {
         var param: [String : Any?] = properties.toDict()
         param.merge(searchType) { (_, new) in new }
 
          // Fetch the default properties for the Search API
-        addSuperProperties(to: &param)
+        addSuperProperties(to: &param,sdkConfig: sdkConfig ?? VueSDKConfig())
         
         //to remove nil values if any
         let filteredProperties = param.compactMapValues { $0 }
