@@ -59,7 +59,7 @@ public extension VueSDKError {
     static let unknownError = errorCode(.ERR011)
     static let serverUnavailable = errorCode(.ERR012)
     static let initializeError =  errorCode(.ERR013)
-    static let emptyMadUUID = errorCode(.ERR014)
+    static let emptyBloxUUID = errorCode(.ERR014)
 }
 
 public enum ErrorCode: String {
@@ -107,7 +107,7 @@ public enum ErrorCode: String {
         case .ERR013:
             return INITIALIZE_ERROR
         case .ERR014:
-            return EMPTY_MAD_UUID
+            return EMPTY_BLOX_UUID
         }
     }
 }

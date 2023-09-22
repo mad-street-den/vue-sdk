@@ -45,15 +45,15 @@ class DataValidator {
         return true
     }
     
-    static func validateMadUUID(_ madUUID: String) -> String? {
-        if Utils.checkEmptyString(madUUID) {
+    static func validateBloxUUID(_ bloxUUID: String) -> String? {
+        if Utils.checkEmptyString(bloxUUID) {
             SDKLogger.shared.logSDKInfo(
                 LOG_INFO_TAG_GENERIC,
-                "ERROR: \(VueSDKError.emptyMadUUID)"
+                "ERROR: \(VueSDKError.emptyBloxUUID)"
             )
             return nil
         }
-        return madUUID
+        return bloxUUID
     }
     
 }

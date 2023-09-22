@@ -100,9 +100,9 @@ public class VueSDKInstance{
         BasePresenter().removeUserId()
     }
     
-    public func setBloxUUID(madUUID: String) {
-        if let validMadUUID = DataValidator.validateMadUUID(madUUID) {
-            BasePresenter().setMadUUID(madUUID: validMadUUID)
+    public func setBloxUUID(bloxUUID: String) {
+        if let validBloxUUID = DataValidator.validateBloxUUID(bloxUUID) {
+            BasePresenter().setMadUUID(madUUID: validBloxUUID)
         }
     }
     
