@@ -15,7 +15,9 @@
   - [Get Recommendations](#5-get-recommendations)
   - [Set User](#6-set-user)
   - [Reset User](#7-reset-user)
-  - [VueSDK debugging and logging](#8-vuesdk-debugging-and-logging)
+  - [Set BloxUUID](#8-set-bloxuuid)
+  - [Reset BloxUUID](#9-reset-bloxuuid)
+  - [VueSDK debugging and logging](#10-vuesdk-debugging-and-logging)
   - [Complete Code Example](#complete-code-example)
 - [I want to know more!](#i-want-to-know-more)
 
@@ -76,8 +78,9 @@ Here's an example of how to use the track function:
 ```swift
 VueSDK.mainInstance().track(
     eventName: "YOUR_CUSTOM_EVENT_NAME",
-    Properties: ["YOUR_KEY" : "YOUR_VALUE"],
-    correlationID: "UNIQUE_CORRRELATION_ID"
+    properties: ["YOUR_KEY" : "YOUR_VALUE"],
+    correlationID: "UNIQUE_CORRRELATION_ID",
+    sdkConfig: VueSDKConfig(medium: "",url: "",platform: "",referrer: "")
  );
 ```
 
@@ -96,6 +99,8 @@ The SDK automatically includes several properties when tracking events, eliminat
 | `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
 | `url`       | Bundle id of the application           | com.example.myapp                    |
 
+Client can change the config properties such as `platform`,`medium`,`referrer`,`url`for each function call by passing the corresponding parameters using the optional parameter `sdkConfig`.
+
 <!-- TABLE_GENERATE_END -->
 
 ## 5. Get Recommendations
@@ -110,7 +115,8 @@ The getRecommendation functions in the SDK allows you to retrieve recommendation
     properties: RecommendationRequest(
         catalogs: [:]
     ),
-    correlationID: "UNIQUE_CORRRELATION_ID"
+    correlationID: "UNIQUE_CORRRELATION_ID",
+    sdkConfig: VueSDKConfig(medium: "",url: "",platform: "",referrer: "")
 ) { response, error in
     if error != nil {
         // Handle Error case
@@ -129,7 +135,8 @@ The getRecommendation functions in the SDK allows you to retrieve recommendation
     properties: RecommendationRequest(
         catalogs: [:]
     ),
-    correlationID: "UNIQUE_CORRRELATION_ID"
+    correlationID: "UNIQUE_CORRRELATION_ID",
+    sdkConfig: VueSDKConfig(medium: "",url: "",platform: "",referrer: "")
 ) { response, error in
     if error != nil {
         // Handle Error case
@@ -148,7 +155,8 @@ VueSDK.mainInstance().getRecommendationsByStrategy(
     properties: RecommendationRequest(
         catalogs: [:]
     ),
-    correlationID: "UNIQUE_CORRRELATION_ID"
+    correlationID: "UNIQUE_CORRRELATION_ID",
+    sdkConfig: VueSDKConfig(medium: "",url: "",platform: "",referrer: "")
 ) { response, error in
     if error != nil {
         // Handle Error case
@@ -174,6 +182,8 @@ The SDK automatically includes several properties when tracking events, eliminat
 | `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
 | `url`       | Bundle id of the application           | com.example.myapp                    |
 
+Client can change the config properties such as `platform`,`medium`,`referrer`,`url`for each function call by passing the corresponding parameters using the optional parameter `sdkConfig`.
+
 <!-- TABLE_GENERATE_END -->
 
 ## 6. Set User
@@ -192,7 +202,23 @@ The `resetUser` function in the SDK allows you to clear the user information and
  VueSDK.mainInstance().resetUser()
 ```
 
-## 8. VueSDK debugging and logging
+## 8. Set BloxUUID
+
+The `setBloxUUID` function in the SDK allows you to set the blox UUID which is passed as argument for the getRecommendations and track functions. In the case where you do not set bloxUUID, the SDK internally generates a random UUID upon an SDK function call and will maintain the same value till `setBloxUUID` is called.
+
+```swift
+ VueSDK.mainInstance().setBloxUUID(bloxUUID: "BLOX_UUID")
+```
+
+## 9. Get BloxUUID
+
+The `getBloxUUID` function in the SDK returns the blox UUID configured in the SDK.
+
+```swift
+ VueSDK.mainInstance().getBloxUUID()
+```
+
+## 10. VueSDK debugging and logging
 
 The SDK provides internal logging capabilities for debugging purposes. By default, the logging feature is disabled.
 
