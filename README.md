@@ -90,14 +90,12 @@ The SDK automatically includes several properties when tracking events. These pr
 
 <!-- TABLE_GENERATE_START -->
 
-| key         | Description                            | Example Value                        |
-| ----------- | -------------------------------------- | ------------------------------------ |
-| `blox_uuid` | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e |
-| `platform`  | Platform of the user                   | ios                                  |
-| `medium`    | Medium from where requests are sent    | application                          |
-| `referrer`  | same values as platform for mobile app | ios                                  |
-| `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
-| `url`       | Bundle id of the application           | com.example.myapp                    |
+| key        | Description                            | Example Value     |
+| ---------- | -------------------------------------- | ----------------- |
+| `platform` | Platform of the user                   | ios               |
+| `medium`   | Medium from where requests are sent    | application       |
+| `referrer` | same values as platform for mobile app | ios               |
+| `url`      | Bundle id of the application           | com.example.myapp |
 
 <!-- TABLE_GENERATE_END -->
 
@@ -171,14 +169,12 @@ Given below are the properties that are automatically added by the SDK for getRe
 
 <!-- TABLE_GENERATE_START -->
 
-| key         | Description                            | Example Value                        |
-| ----------- | -------------------------------------- | ------------------------------------ |
-| `blox_uuid` | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e |
-| `platform`  | Platform of the user                   | ios                                  |
-| `medium`    | Medium from where requests are sent    | application                          |
-| `referrer`  | same values as platform for mobile app | ios                                  |
-| `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
-| `url`       | Bundle id of the application           | com.example.myapp                    |
+| key        | Description                            | Example Value     |
+| ---------- | -------------------------------------- | ----------------- |
+| `platform` | Platform of the user                   | ios               |
+| `medium`   | Medium from where requests are sent    | application       |
+| `referrer` | same values as platform for mobile app | ios               |
+| `url`      | Bundle id of the application           | com.example.myapp |
 
 <!-- TABLE_GENERATE_END -->
 
