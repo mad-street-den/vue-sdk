@@ -13,7 +13,7 @@ let NO_RESPONSE = "No response received."
 let UNABLE_TO_DECODE = "Unable to decode response."
 let EMPTY_USER_ID = "User id is not specified"
 let SERVER_UNAVAILABLE = "Our server is currently experiencing issues. Please try again later."
-let EMPTY_BLOX_UUID = "Blox UUID is empty"
+let EMPTY_BLOX_UUID = "Blox UUID is not specified"
 
 let BLOX_UUID = "blox_uuid"
 let USER_ID = "user_id"
