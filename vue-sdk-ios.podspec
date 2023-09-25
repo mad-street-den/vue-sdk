@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "vue-sdk-ios"
-  spec.version      = "1.0.0"
+  spec.version      = "1.1.0"
   spec.summary      = "VueSDK library for iOS (Swift)"
   spec.description  = "VueSDK is a library/SDK providing all the functions and utilities required to help you build and integrate all the recommendations and search offered by Vue.AI."
   spec.homepage     = "https://github.com/mad-street-den/vue-sdk-ios/tree/main"
