@@ -86,7 +86,7 @@ VueSDK.mainInstance().track(
 
 **Note:** The `correlationId` is an optional parameter that allows you to provide a unique correlation ID for the event. It is important to ensure that the `correlationId` is unique across each pages for both search and track API calls.
 
-The SDK automatically includes several properties when tracking events, eliminating the need for users to manually add them. These properties are essential for comprehensive event tracking and provide valuable insights into user interactions. Here are some of the properties that are automatically added by the SDK:
+The SDK automatically includes several properties when tracking events. These properties are essential for comprehensive event tracking and provide valuable insights into user interactions. Given below are the properties that are automatically added by the SDK. By explicitly providing the SDK config parameter for the track function, the user can override each property's value:
 
 <!-- TABLE_GENERATE_START -->
 
@@ -98,8 +98,6 @@ The SDK automatically includes several properties when tracking events, eliminat
 | `referrer`  | same values as platform for mobile app | ios                                  |
 | `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
 | `url`       | Bundle id of the application           | com.example.myapp                    |
-
-Client can change the config properties such as `platform`,`medium`,`referrer`,`url`for each function call by passing the corresponding parameters using the optional parameter `sdkConfig`.
 
 <!-- TABLE_GENERATE_END -->
 
@@ -169,7 +167,7 @@ VueSDK.mainInstance().getRecommendationsByStrategy(
 
 **Note:** The `correlationId` is an optional parameter that allows you to provide a unique correlation ID for the search request. It is important to ensure that the `correlationId` is unique across pages for both search and track API calls.
 
-The SDK automatically includes several properties when tracking events, eliminating the need for users to manually add them. Here are some of the properties that are automatically added by the SDK:
+Given below are the properties that are automatically added by the SDK for getRecommendations function. By explicitly providing the SDK config parameter for the getRecommendations function, the user can override each property's value.
 
 <!-- TABLE_GENERATE_START -->
 
@@ -181,8 +179,6 @@ The SDK automatically includes several properties when tracking events, eliminat
 | `referrer`  | same values as platform for mobile app | ios                                  |
 | `user_id`   | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e |
 | `url`       | Bundle id of the application           | com.example.myapp                    |
-
-Client can change the config properties such as `platform`,`medium`,`referrer`,`url`for each function call by passing the corresponding parameters using the optional parameter `sdkConfig`.
 
 <!-- TABLE_GENERATE_END -->
 
@@ -210,6 +206,8 @@ The `setBloxUUID` function in the SDK allows you to set the blox UUID which is p
  VueSDK.mainInstance().setBloxUUID(bloxUUID: "BLOX_UUID")
 ```
 
+**Note:** The BloxUUID provided will be stored in App's cache and will be maintained throughout App's lifecycle.
+
 ## 9. Get BloxUUID
 
 The `getBloxUUID` function in the SDK returns the blox UUID configured in the SDK.
@@ -217,6 +215,8 @@ The `getBloxUUID` function in the SDK returns the blox UUID configured in the SD
 ```swift
  VueSDK.mainInstance().getBloxUUID()
 ```
+
+**Note:** In case if setBloxUUID or an SDK function is not called throughout an app's lifecycle the getBloxUUID function will return a null value.
 
 ## 10. VueSDK debugging and logging
 
