@@ -34,15 +34,16 @@ class HomeViewController: UIViewController {
         
         // Search Recommendations by page
         let catalogs = [
-            "3089e3d3ba": [
+            "9e3fd2f248": [
                 "fields": [
-                    "title",
-                    "price",
-                    "image_link",
-                    "link"
+                    "Title",
+                    "Variant Price",
+                    "Image Src",
+                    "Vendor",
+                    "Handle"
                 ],
                 "context": [
-                    "variant_id": "39596296700022"
+                    "Handle": "wots9999"
                 ]
             ]
         ]
@@ -66,20 +67,21 @@ class HomeViewController: UIViewController {
         
         // Search Recommendations by module
         let catalogs = [
-            "427e26dbfa": [
+            "9e3fd2f248": [
                 "fields": [
-                    "title",
-                    "price",
-                    "image_link",
-                    "link"
+                    "Title",
+                    "Variant Price",
+                    "Image Src",
+                    "Vendor",
+                    "Handle"
                 ],
                 "context": [
-                    "variant_id": "39596296700022"
+                    "Handle": "wots9999"
                 ]
             ]
         ]
         sdkInstance.getRecommendationsByModule(
-            moduleReference: "Similar Products Module - 27 June",
+            moduleReference: "SP Aug 1st",
             properties: RecommendationRequest(
                 catalogs: catalogs,
                 unbundle: true
@@ -101,24 +103,21 @@ class HomeViewController: UIViewController {
         
         // Search Recommendations by strategy
         let catalogs = [
-            "427e26dbfa": [
+            "9e3fd2f248": [
                 "fields": [
-                    "title",
-                    "price",
-                    "image_link",
-                    "link"
+                    "Title",
+                    "Variant Price",
+                    "Image Src",
+                    "Vendor",
+                    "Handle"
                 ],
                 "context": [
-                    "variant_id": "39596296700022"
+                    "Handle": "wots9999"
                 ],
-                "search_query": "top",
-                "search_fields": [
-                    "title"
-                ]
             ]
         ]
         sdkInstance.getRecommendationsByStrategy(
-            strategyReference:  "Similar Products - 27June",
+            strategyReference:  "SP Aug 1st",
             properties: RecommendationRequest(
                 catalogs: catalogs
             ),correlationId: homeViewCorrelationID

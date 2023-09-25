@@ -38,16 +38,16 @@ class DetailViewController:UIViewController{
                           "page_name": "PDP",
                           "product_id": "39596296700022"
                          ]
-        sdkInstance.track(eventName: "PageView", properties: properties,
-                  correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "pageView", properties: properties,
+                          correlationId: detailViewCorrelationID,sdkConfig: VueSDKConfig(medium: "MED",url: "",platform: "ios"))
     }
     
     @IBAction func onTapPageViewForHome(_ sender: Any) {
         let properties = ["page_type":"Home",
                           "page_name": "Home",
                          ]
-        sdkInstance.track(eventName: "PageView", properties: properties,
-                  correlationId: detailViewCorrelationID)
+        sdkInstance.track(eventName: "pageView", properties: properties,
+                          correlationId: detailViewCorrelationID)
     }
     
     @IBAction func onTapBuy(_ sender: Any) {
@@ -100,8 +100,9 @@ class DetailViewController:UIViewController{
         let properties = ["page_type":"pdp",
                           "page_name": "PDP",
                           "product_id": "5789256482843",
-                          "clicked_product_id": "39946630725750"]
-        sdkInstance.track(eventName: "Add2cart", properties: properties, correlationId: detailViewCorrelationID)
+                          "clicked_product_id": "39946630725750",
+                          "source_prodid": "s18naqdp743b"]
+        sdkInstance.track(eventName: "addToCart", properties: properties, correlationId: detailViewCorrelationID,sdkConfig: VueSDKConfig(medium: "medium"))
     }
     
     @IBAction func onTapRemoveFromCart(_ sender: Any) {

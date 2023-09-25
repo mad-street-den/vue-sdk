@@ -59,16 +59,16 @@ public class VueSDKInstance{
         eventPresenter.discoverEvents(success: success,failure:failure)
     }
     
-    public func track(eventName: String, properties: [String:Any?]?, correlationId: String? = nil) {
+    public func track(eventName: String, properties: [String:Any?]?, correlationId: String? = nil, sdkConfig: VueSDKConfig? = nil) {
         guard DataValidator.validateEventSanity(eventName: eventName) else { return }
         Task {
-            await eventPresenter.trackEvent(eventName: eventName, properties: properties, correlationId: correlationId)
+            await eventPresenter.trackEvent(eventName: eventName, properties: properties, correlationId: correlationId, sdkConfig: sdkConfig)
         }
     }
     
-    public func getRecommendationsByModule(moduleReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByModule(moduleReference: String, properties: RecommendationRequest, correlationId: String? = nil, sdkConfig: VueSDKConfig? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task {
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.module_name.rawValue : moduleReference], properties: properties, correlationId:correlationId,  success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.module_name.rawValue : moduleReference], properties: properties, correlationId:correlationId, sdkConfig: sdkConfig, success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)
@@ -76,9 +76,9 @@ public class VueSDKInstance{
         }
     }
     
-    public func getRecommendationsByStrategy(strategyReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByStrategy(strategyReference: String, properties: RecommendationRequest, correlationId: String? = nil, sdkConfig: VueSDKConfig? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task{
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.strategy_name.rawValue : strategyReference], properties: properties, correlationId: correlationId, success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.strategy_name.rawValue : strategyReference], properties: properties, correlationId: correlationId, sdkConfig: sdkConfig, success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)
@@ -86,9 +86,9 @@ public class VueSDKInstance{
         }
     }
     
-    public func getRecommendationsByPage(pageReference: String, properties: RecommendationRequest, correlationId: String? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
+    public func getRecommendationsByPage(pageReference: String, properties: RecommendationRequest, correlationId: String? = nil, sdkConfig: VueSDKConfig? = nil, success: @escaping([[String:Any?]]) -> Void, failure: @escaping([String:Any?]) -> Void) {
         Task{
-            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : pageReference], properties: properties, correlationId: correlationId, success: { response in
+            await recommendationPresenter.getRecommendations(searchType: [RecommendationRequestType.page_name.rawValue : pageReference], properties: properties, correlationId: correlationId, sdkConfig: sdkConfig, success: { response in
                 success(response)
             }, failure: { error in
                 failure(error)
@@ -99,5 +99,16 @@ public class VueSDKInstance{
     public func resetUser() {
         BasePresenter().removeUserId()
     }
+    
+    public func setBloxUUID(bloxUUID: String) {
+        if let validBloxUUID = DataValidator.validateBloxUUID(bloxUUID) {
+            BasePresenter().setMadUUID(madUUID: validBloxUUID)
+        }
+    }
+    
+    public func getBloxUUID() -> String? {
+        return userDefaults.getUserDefaultString(key: UserDefaultsKeys.MAD_UUID.rawValue)
+    }
+    
 }
 

@@ -18,8 +18,8 @@ struct Product {
         var products: [Self] = []
         guard let array = response[0]["data"] as? [[String: Any?]] else { return [] }
         products = array.compactMap { dataObject in
-            guard let title = dataObject["title"] as? String,
-                  let link = dataObject["image_link"] as? String else { return nil }
+            guard let title = dataObject["Title"] as? String,
+                  let link = dataObject["Image Src"] as? String else { return nil }
             return Product(title: title, link: link)
         }
         return products

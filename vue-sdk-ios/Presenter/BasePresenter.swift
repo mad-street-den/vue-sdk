@@ -10,6 +10,10 @@ class BasePresenter {
         return generatedUUID
     }
     
+    func setMadUUID(madUUID: String) {
+        userDefaults.setUserDefaultString(key: UserDefaultsKeys.MAD_UUID.rawValue, value: madUUID)
+    }
+    
     func setUserId(userId: String) {
         userDefaults.setUserDefaultString(key: UserDefaultsKeys.MSD_USER_ID.rawValue, value: userId)
     }
@@ -30,12 +34,12 @@ class BasePresenter {
         }
     }
     
-    func addSuperProperties(to properties: inout [String:Any?]) {
+    func addSuperProperties(to properties: inout [String:Any?], sdkConfig: VueSDKConfig) {
         properties.updateValue(getMadUUID(), forKey: BLOX_UUID)
         properties.updateValue(getUserId(), forKey: USER_ID)
-        properties.updateValue(getBundleId(), forKey: URL_STRING)
-        properties.updateValue(ios, forKey: PLATFORM)
-        properties.updateValue(application, forKey: MEDIUM)
-        properties.updateValue(ios, forKey: REFERRER)
+        sdkConfig.medium.map { properties[MEDIUM] = $0 } ?? (properties[MEDIUM] = application)
+        sdkConfig.referrer.map { properties[REFERRER] = $0} ?? (properties[REFERRER] = ios)
+        sdkConfig.url.map { properties[URL_STRING] = $0 } ?? (properties[URL_STRING] = getBundleId())
+        sdkConfig.platform.map { properties[PLATFORM] = $0} ?? (properties[PLATFORM] = ios)
     }
 }

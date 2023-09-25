@@ -44,4 +44,16 @@ class DataValidator {
         }
         return true
     }
+    
+    static func validateBloxUUID(_ bloxUUID: String) -> String? {
+        if Utils.checkEmptyString(bloxUUID) {
+            SDKLogger.shared.logSDKInfo(
+                LOG_INFO_TAG_GENERIC,
+                "ERROR: \(VueSDKError.emptyBloxUUID)"
+            )
+            return nil
+        }
+        return bloxUUID
+    }
+    
 }
