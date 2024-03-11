@@ -1,0 +1,33 @@
+name: mobsfscan
+
+on:
+  push:
+    branches:
+    - mobsfscan
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: mobsfscan
+      uses: MobSF/mobsfscan@main
+      with:
+        args: '. --json > scan.json'
+
+    - name: Post to a Slack channel
+      if: always()
+      uses: slackapi/slack-github-action@v1.22.0
+      with:
+        channel-id: 'secure-codescan-reports'
+        slack-message: "Code Scanning Failed for VUE-SDK-IOS Repository"
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.MSD_BOT_TOKEN }}
+
+    - name: Upload to slack step
+      uses: adrey/slack-file-upload-action@master
+      if: always()
+      with:
+        token: ${{ secrets.MSD_BOT_TOKEN }}
+        path: scan.json
+        channel: secure-codescan-reports
